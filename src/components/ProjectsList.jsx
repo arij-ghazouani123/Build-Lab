@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react'
 
 export default function ProjectsList() {
     // Fetch User projects
-    const userId='63ff20b3f5330d6b2cb16d55'
+    const userId= localStorage.getItem("idfromtoken");
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        axios.get(`http://localhost:9090/project/myProjects/${userId}`)
+        axios.get(`http://localhost:9090/myProjects/${userId}`)
         .then(res => {
             console.log(res);
             setData(res.data)
@@ -17,12 +17,13 @@ export default function ProjectsList() {
         })
     })
 
-
+    localStorage.getItem("projectidid");
+    localStorage.setItem("projectidid",data.idfromtoken );
 
     //fetch User Role 
 
 
-const [role, setRole] = useState([]);
+/*const [role, setRole] = useState([]);
 
     useEffect(() => {
         axios.get(`http://127.0.0.1:9090/project/myRole/63ffb6dcb63179ea4458f112/63ff20b3f5330d6b2cb16d55`)
@@ -33,7 +34,7 @@ const [role, setRole] = useState([]);
         .catch( err => {
             console.log(err)
         })
-    })
+    })*/
 
     return (
         <table className="table table-hover" style={{ border: "3px solid black", margin: 30 }}>
