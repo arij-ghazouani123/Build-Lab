@@ -30,7 +30,7 @@ let transporter = nodemailer.createTransport({
         html: `<p>Hello,</p><p> ${senderemail} has invited you to collaborate on a new project  as  ${role}.</p>
         <p>You can accept or decline this invitation</p>
         <p>This invitation will expire in 2 days.</p>
-        <a target="_blank"><button  style="background-color: #008CBA; border: none; color: white; padding: 12px 28px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">Accepter l'invitation</button></a>
+        <a target="_blank"><button  onclick="addContributorToProject()" style="background-color: #008CBA; border: none; color: white; padding: 12px 28px; text-align: center; text-decoration: none; display: inline-block; font-size: 16px; margin: 4px 2px; cursor: pointer;">Accepter l'invitation</button></a>
         <p> Note: This invitation was intended for ${email} . If you were not expecting this invitation, you can ignore this email.</p>
         `
 

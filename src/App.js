@@ -58,6 +58,8 @@ function App() {
         <Route exact path="/service" component={Services} />
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/invitation" component={InviteForm} />
+        <Route exact path="/dashboard" component={Dashboard} />
+
 
         <Protectedroute exact path="/login" component={Login} auth={auth1}/>
         <Protectedroute exact path="/register" component={Register} auth={auth1}/>

@@ -112,12 +112,13 @@ export async function logIn(req,res){
     if (!validPass) return res.status(400).send("Invalid Password") ;
 
       const secret = crypto.randomBytes(64).toString('hex');
-      const token = jwt.sign({email:User1.email,role:User1.role,project:User1.projects}, secret, { expiresIn: '1h' });
+      const token = jwt.sign({email:User1.email,role:User1.role,project:User1.projects,Id:User1._id}, secret, { expiresIn: '1h' });
       const decoded = jwt.verify(token, secret);
       const  sender1 =  decoded.email; 
       const role1 = decoded.role;
+      const id1 = decoded.Id;
       console.log(sender1);
-    return res.json({emailformtoken:sender1,rolefromtoken:role1});
+    return res.json({emailformtoken:sender1,rolefromtoken:role1,idfromtoken:id1});
   } catch (err) {
     console.log(err);
   }

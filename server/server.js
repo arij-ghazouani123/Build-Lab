@@ -8,12 +8,17 @@ import __dirname from 'path';
 import path from 'path';
 import session from 'express-session';
 import bodyParser from 'body-parser';
- 
+import cors from 'cors';
 const app = express();
 
 const port = process.env.port || 9090;
 const databaseName ='Buildlab';
 
+app.use(
+    cors({
+        origin : "http://localhost:3000"
+    })
+);
 mongoose.set('debug', true);
 
 mongoose.Promise = global.Promise;
@@ -32,7 +37,6 @@ app.use(express.urlencoded({encoded : true}));
 
 app.use('/',userRouter);
 
-  
 
 app.use('/image', express.static('/public/images'));
 

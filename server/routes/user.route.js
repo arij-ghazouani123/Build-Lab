@@ -5,12 +5,14 @@ import Users from "../modals/user.js";
 import user from "../modals/user.js";
 import {sendemail} from "../middlewares/emailinvitation.js";
 import { addProject,addContributorToProject} from "../controllers/contributor.js";
+
 import multer from 'multer';
+import { deleteProject, getUserPojects, getUserRole } from "../controllers/projet.js";
 
 const router = express.Router();
 
 
-//User
+/////////////////////////////////User
  router.route('/register').post(
     body('username').isLength({ min: 3}),
     body('email').isEmail(),
@@ -19,8 +21,8 @@ const router = express.Router();
 
     router.route('/login').post(logIn);
         
- 
-    router.route('/addproject').post(
+ ////////////////////////////////////////////
+    router.route('/project/addProject/').post(
         body('user'),
         body('name'),
         body('releaseType'),
@@ -35,5 +37,18 @@ const router = express.Router();
 
   router.route('/emailinvitation/:Project').post(sendemail);
   router.route('/updateuserrole').put(updateUserRole);
+
+  ////////////////////////////////////
+
+  router.route('/myProjects/:user')
+        .get(getUserPojects)
+
+
+ router.route('/myRole/:project/:user')
+        .get(getUserRole)
+
+
+ router.route('/deleteProject/:_id')
+        .delete(deleteProject)       
 
 export default router;

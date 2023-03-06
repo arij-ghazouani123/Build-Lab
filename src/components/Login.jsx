@@ -39,6 +39,8 @@ const Login = () => {
       }else{
         window.alert("Login Successfull");
         const data = await res.json();
+        localStorage.getItem("idfromtoken");
+        localStorage.setItem("idfromtoken",data.idfromtoken );
         localStorage.getItem("emailformtoken");
         localStorage.setItem("emailformtoken",data.emailformtoken );
         localStorage.getItem("rolefromtoken");
