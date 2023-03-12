@@ -4,10 +4,10 @@ import {   register,logIn,updateUserRole} from "../controllers/user.js";
 import Users from "../modals/user.js";
 import user from "../modals/user.js";
 import {sendemail} from "../middlewares/emailinvitation.js";
-import { addProject,addContributorToProject} from "../controllers/contributor.js";
+import { addProject,addContributorToProject,DeleteContributor} from "../controllers/contributor.js";
 
 import multer from 'multer';
-import { deleteProject, getUserPojects, getUserRole } from "../controllers/projet.js";
+import { deleteProject, getUserPojects, getUserRole,afficherDetailsProjet, updateProject } from "../controllers/projet.js";
 
 const router = express.Router();
 
@@ -40,15 +40,23 @@ const router = express.Router();
 
   ////////////////////////////////////
 
-  router.route('/myProjects/:user')
+router.route('/project/myProjects/:user')
         .get(getUserPojects)
 
 
- router.route('/myRole/:project/:user')
+router.route('/project/myRole/:project/:user')
         .get(getUserRole)
 
 
- router.route('/deleteProject/:_id')
-        .delete(deleteProject)       
+ router.route('/project/deleteProject/:_id')
+        .delete(deleteProject)  
 
+router.route('/project/updateProject/:_id')
+        .put(updateProject)  
+
+router.route('/afficherDetailsProjet/:_id')
+        .get(afficherDetailsProjet)   
+
+router.route('/DeleteContributor/:_id1/:_id2/:_id3')
+        .delete(DeleteContributor)    
 export default router;

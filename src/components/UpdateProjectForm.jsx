@@ -24,7 +24,7 @@ export default function UpdateProjectForm() {
 
 
    //const userId= localStorage.getItem("idfromtoken");
-   const ProjectId= "640ddbac3f745878c51ad06e";
+   const ProjectId= "640e00b0e1d84398fedbe807";
 
     // Button Click Handler
     function handleClick() {
@@ -57,7 +57,7 @@ export default function UpdateProjectForm() {
 
     return (
         <div style={{ width: 500, height: 500, padding: 10 }}>
-            <form style={{ border: "5px solid blue", padding: 30 }}>
+            <form style={{ border: "2px solid blue", padding: 30 }}>
                 <div class="mb-3">
                     <label for="appNameInput" class="form-label">App Name</label>
                     <input type="text" class="form-control" id="appNameInput" value={name} onChange={handleNameChange} />

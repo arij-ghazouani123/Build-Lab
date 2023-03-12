@@ -65,6 +65,25 @@ export function getUserRole(req, res) {
 
 
 
+//Get Project Details ById 
+export async function afficherDetailsProjet(req,res) {
+     
+     try {
+          const projectId = req.params._id;
+         const Project = await project.findById(projectId)
+             .populate('user') 
+             .populate('contributors') 
+             .populate('name') 
+             .populate('releaseType') 
+             .populate('opSystem') 
+             .populate('platform') 
+           
+         console.log(Project);
+     } catch (err) {
+         console.error(err);
+     }
+ }
+
 
 // Delete project
 
@@ -76,19 +95,17 @@ export function deleteProject(req, res) {
           .catch((err) => {
                res.status(500).json({ error: err });
           });
-     }
-
-
+}
 
 //Update Project
 
 export function updateProject(req, res) {
-     const projectId =req.params._id
+     const projectId = req.params._id
 
      const updatedProject = {
-    name: req.body.name,
-    releaseType: req.body.releaseType,
-  };
+          name: req.body.name,
+          releaseType: req.body.releaseType,
+     };
      project.updateOne({ _id: projectId }, updatedProject).then(
           () => {
                res.status(201).json({
@@ -103,6 +120,7 @@ export function updateProject(req, res) {
           }
      );
 };
+
 
 
 

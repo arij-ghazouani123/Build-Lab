@@ -9,14 +9,14 @@ const Register = () => {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState({});
   const history = useHistory();
-  useEffect(() => {
+  /*useEffect(() => {
     const userRole = localStorage.getItem('rolefromtoken');
     if (userRole !== 'Maintainer') {
       window.alert("this route is for  Maintainers");
 
       history.push('/'); // redirect to home page if user doesn't have the required role
     }
-  }, [history]);
+  }, [history]);*/
   const handleSubmit = (event) => {
     event.preventDefault();
     // validate the form fields

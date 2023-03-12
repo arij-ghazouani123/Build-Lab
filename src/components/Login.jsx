@@ -48,7 +48,7 @@ const Login = () => {
 
         console.log(data);
        // window.location.reload();
-        history.push('/')
+        history.push('/ProjectLits')
         // Token is generated When we Logged In.
         // Now we need to create Schema for Messages
       }

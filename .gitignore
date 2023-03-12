@@ -1,2 +1,3 @@
 node_modules
-server/TODO.js
+server/controllers/TODO.js
+server/node_modules
