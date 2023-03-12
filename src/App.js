@@ -14,7 +14,20 @@ import Protectedroute from './ProtectedRoute';
 import InviteForm from './components/invitation';
 import { useEffect, useState } from 'react';
 
+
+
+import Build from './components/Build';
+import ResetPassword from './components/ResetPassword';
+import VerificationCode from './components/VerificationCode';
+import VerificationMail from './components/VerificationMail';
+import TermsAndConditions from './components/TermsAndConditions';
+
+
+import EmailForm from './components/ForgotPassword';
+import ReactSwitch from 'react-switch';
+
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Check If User is Logged In
   const [auth, setauth] = useState(false);
@@ -50,7 +63,9 @@ function App() {
   }, []);
 
   return (
-    <>
+   
+    <div id={isDarkMode ? "dark" : "light"}>
+      <ReactSwitch checked={isDarkMode} onChange={toggleDarkMode} />
       <Navbar auth={auth1}/>
       <Switch>
         <Route exact path="/" component={Home} />
@@ -60,26 +75,28 @@ function App() {
         <Route exact path="/invitation" component={InviteForm} />
         <Route exact path="/dashboard" component={Dashboard} />
 
-
+        <Protectedroute exact path="/VerificationCode" component={VerificationCode} auth={auth1}/>
+        <Protectedroute exact path="/VerificationMail" component={VerificationMail} auth={auth1}/>
+        <Protectedroute exact path="/TermsAndConditions" component={TermsAndConditions} auth={auth1}/>
+        <Protectedroute exact path="/login" component={Login} auth={auth1}/>
+        <Protectedroute exact path="/ResetPassword" component={ResetPassword} auth={auth1}/>
+        <Protectedroute exact path="/register" component={Register} auth={auth1}/>
         <Protectedroute exact path="/login" component={Login} auth={auth1}/>
         <Protectedroute exact path="/register" component={Register} auth={auth1}/>
         <Protectedroute exact path="/dashboard" component={Dashboard} auth={auth}/>
         <Protectedroute exact path="/logout" component={Logout} auth={auth}/>
+        <Route exact path="/ForgotPassword" component={EmailForm} />
+
 
       </Switch>
       <Footer/>
-    </>
+      </div>
+
+    
   );
 }
 
 export default App;
 
 
-// Now we have to Procted Out Route Like Without Login
-// You can not go to Dashboard
-// And After login you can not login again
-// We need Protected Routes
 
-// We Cant Acces Them If Auth is False
-
-// Now we need to Change Navbar Dynamically

@@ -11,3 +11,76 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+:root {
+  --background: #ffffff;
+  --text-primary: #000;
+  --text-secondary: #8e05c2;
+  --accent: #8e05c2;
+  --border: #333;
+  --form-bg: #fff;
+}
+
+[data-theme='dark'] {
+  --background: #000;
+  --text-primary: #fff;
+  --text-secondary: #8e05c2;
+  --accent: #8e05c2;
+  --border: #808080;
+  --form-bg: #191919;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+
+
+
+
+
+
+
+input[type=checkbox]:checked {
+  margin: 0;
+  padding: 0;
+}
+
+.remember p {
+  padding-left: 8px;
+}
+
+button {
+  background-color: var(--accent);
+  border: 1px solid var(--accent);
+  color: #fff;
+  margin: 16px 0;
+  padding: 10px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: .8rem;
+}
+
+.create {
+  font-size: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+@media screen and (max-width:478px) {
+  .Login {
+    width: 95%;
+  }
+}
