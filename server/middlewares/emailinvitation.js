@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 import jwt from 'jsonwebtoken';
-import user from '../modals/user.js';
+import user from '../models/user.js';
 import { addContributorToProject } from '../controllers/contributor.js';
 
 export async function sendemail(req, res) {

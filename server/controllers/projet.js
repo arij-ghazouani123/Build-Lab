@@ -1,5 +1,5 @@
-import project from '../modals/projet.js';
-import contributor from "../modals/contributor.js";
+import project from '../models/projet.js';
+import contributor from "../models/contributor.js";
 
 
 export async function addProject(req, res) {
@@ -78,7 +78,7 @@ export async function afficherDetailsProjet(req,res) {
      try {
           const projectId = req.params._id;
          const Project = await project.findById(projectId)
-             .populate('user') 
+             .populate('user','username') 
              .populate('contributors') 
              .populate('name') 
              .populate('releaseType') 

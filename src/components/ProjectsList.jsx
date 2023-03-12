@@ -1,6 +1,8 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
+import NewProjectModal from './NewProjectModal';
+
 
 export default function ProjectsList() {
     // Fetch User projects
@@ -76,21 +78,21 @@ export default function ProjectsList() {
                     <td>Mantainer</td>
                     <td>
                       <button type="button" class="btn btn-primary" >Update</button>
-                      <button type="button" class="btn btn-danger" onClick={(event) => { handleRowClick(item._id);handleDeleteChange(event);
-}}>Delete</button>
+                      <button type="button" class="btn btn-danger" onClick={(event) => { handleRowClick(item._id);handleDeleteChange(event);}}>Delete</button>
                       <button type="button" class="btn btn-primary" onClick={() => handleRowClick(item._id)} ><NavLink className="nav-link" to="/invitation">Invite</NavLink></button>
                       
-
                     </td>
                   </tr>
                 ))}
             
-                                
+                
             </tbody>
            
         </table>
+
         
     );
+
 
 
 }

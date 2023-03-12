@@ -1,6 +1,8 @@
-import user from '../modals/user.js';
-import project from  '../modals/projet.js'
-import contributor from '../modals/contributor.js';
+import user from '../models/user.js';
+import project from  '../models/projet.js'
+import contributor from '../models/contributor.js';
+
+//////////////////////////////////////////////////////////
 export async function addContributorToProject(req, res){
 
 // Find the user to be added as a contributor

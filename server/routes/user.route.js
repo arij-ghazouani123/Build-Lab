@@ -1,8 +1,8 @@
 import  express  from "express";
 import { body } from "express-validator";
 import {   register,logIn,updateUserRole} from "../controllers/user.js";
-import Users from "../modals/user.js";
-import user from "../modals/user.js";
+import Users from "../models/user.js";
+import user from "../models/user.js";
 import {sendemail} from "../middlewares/emailinvitation.js";
 import { addProject,addContributorToProject,DeleteContributor} from "../controllers/contributor.js";
 
