@@ -76,7 +76,7 @@ function App() {
         <Route exact path="/invitation" component={InviteForm} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/ProjectLits" component={ProjectsList} />
-
+        <Route exact path="/Second" component={Second} />
         <Protectedroute exact path="/VerificationCode" component={VerificationCode} auth={auth1}/>
         <Protectedroute exact path="/VerificationMail" component={VerificationMail} auth={auth1}/>
         <Protectedroute exact path="/TermsAndConditions" component={TermsAndConditions} auth={auth1}/>
