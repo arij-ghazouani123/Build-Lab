@@ -82,23 +82,25 @@ export default function ProjectsList() {
                             <td>
                                 <div style={{
                                     display: 'flex',
-                                    justifycontent: 'space-between'}}>
-                                <UpdateProjectModal />
-                                <button type="button" class="btn btn-danger rounded-pill" onClick={(event) => {
-                                    handleRowClick(item._id); handleDeleteChange(event);
-                                }}>Delete</button>
-                                <button type="button" class="btn btn-primary rounded-pill" onClick={() => handleRowClick(item._id)} ><NavLink className="nav-link" to="/invitation">Invite</NavLink></button>
+                                    justifycontent: 'row'
+                                }}>
+                                    <button onClick={() => handleRowClick(item._id)} style
+                                        ={{ border: 'none', outline: 'none' }} class="btn btn-light w-30 rounded-pill"> <UpdateProjectModal />   </button>
+                                    <button type="button" class="btn btn-danger  w-30 rounded-pill" onClick={(event) => {
+                                        handleRowClick(item._id); handleDeleteChange(event);
+                                    }}>Delete</button>
+                                    <button type="button" class="btn btn-primary rounded-pill" onClick={() => handleRowClick(item._id)} ><NavLink className="nav-link" to="/invitation">Invite</NavLink></button>
 
-                            </div>
-                        </td>
-                    </tr>
-                ))}
+                                </div>
+                            </td>
+                        </tr>
+                    ))}
 
-            </tbody>
+                </tbody>
 
-        </table>
-        
-</div >
+            </table>
+
+        </div >
     );
 
 

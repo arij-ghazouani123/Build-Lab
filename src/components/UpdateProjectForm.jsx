@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 
 
 export default function UpdateProjectForm() {
-    
+
 
     const [name, setName] = useState("");
     const [releaseType, setReleaseType] = useState("");
@@ -20,11 +20,12 @@ export default function UpdateProjectForm() {
         setReleaseType(event.target.value);
     };
 
-  
 
 
-   //const userId= localStorage.getItem("idfromtoken");
-   const ProjectId= "640e00b0e1d84398fedbe807";
+
+    //const userId= localStorage.getItem("idfromtoken");
+    //const ProjectId= "640e00b0e1d84398fedbe807";
+    const ProjectId = localStorage.getItem('projectIdFromProjectLists')
 
     // Button Click Handler
     function handleClick() {
@@ -76,9 +77,9 @@ export default function UpdateProjectForm() {
 
 
                 </div>
-                   
+
                 <div style={{ display: 'flex', justifyContent: 'flex-end', margin: 20 }}>
-                    <button type="submit" className="btn btn-primary w-100 mt-4 rounded-pill" onClick={handleClick}>Update</button>
+                    <button type="submit" className="btn btn-primary w-30  rounded-pill" onClick={handleClick}>Update</button>
                     {showPopup && (
                         <div className="popup">
                             <h2>Request Complete!</h2>
