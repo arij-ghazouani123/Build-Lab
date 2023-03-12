@@ -59,7 +59,7 @@ export default function ProjectsList() {
         <div>
             <NewProjectModal />
 
-            <table className="table table-hover" style={{ border: "2px solid blue", margin: 30 }}>
+            <table className="table table-hover" style={{ border: "2px solid blue"}}>
                 <thead>
                     <tr className='table-info'>
                         <th scope="col"></th>
