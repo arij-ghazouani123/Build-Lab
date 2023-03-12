@@ -1,5 +1,5 @@
-import project from '../modals/projet.js';
-import contributor from "../modals/contributor.js";
+import project from '../models/project.model.js';
+import contributor from "../models/contributor.model.js"
 
 
 export async function addProject(req, res) {
@@ -64,65 +64,12 @@ export function getUserRole(req, res) {
 }
 
 
-
-//Get Project Details ById 
-export async function afficherDetailsProjet(req,res) {
-     
-     try {
-          const projectId = req.params._id;
-         const Project = await project.findById(projectId)
-             .populate('user') 
-             .populate('contributors') 
-             .populate('name') 
-             .populate('releaseType') 
-             .populate('opSystem') 
-             .populate('platform') 
-           
-         console.log(Project);
-     } catch (err) {
-         console.error(err);
-     }
- }
-
-
 // Delete project
 
-export function deleteProject(req, res) {
-     const projectId = req.params._id;
-     project.findOneAndDelete(projectId).then((docs) => {
-          res.status(200).send("Project deleted");
-     })
-          .catch((err) => {
-               res.status(500).json({ error: err });
-          });
+export function deleteProject(req,res) {
+
+     project.findOneAndDelete({_id :project.params._id})
 }
-
-//Update Project
-
-export function updateProject(req, res) {
-     const projectId = req.params._id
-
-     const updatedProject = {
-          name: req.body.name,
-          releaseType: req.body.releaseType,
-     };
-     project.updateOne({ _id: projectId }, updatedProject).then(
-          () => {
-               res.status(201).json({
-                    message: 'Project updated successfully!'
-               });
-          }
-     ).catch(
-          (error) => {
-               res.status(400).json({
-                    error: error
-               });
-          }
-     );
-};
-
-
-
 
 
 

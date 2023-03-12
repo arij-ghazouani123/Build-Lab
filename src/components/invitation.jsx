@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import './InviteForm.css';
 const InviteForm = () => {
   const [email, setEmail] = useState('');
   const [role, setRole] = useState('');
 
   const [errors, setErrors] = useState({});
+  const history = useHistory();
   const  Project = localStorage.getItem("projectIdFromProjectLists");
 
   const handleContributorChange =async (event3) => {
@@ -38,13 +40,14 @@ const InviteForm = () => {
       });
       localStorage.setItem('EmailFromInvitation', JSON.stringify(email));
       localStorage.setItem('RoleFromInvitation', JSON.stringify(role));
-
+      history.push('/ProjectLits')
     // Logic to send invitation using email, projectName and role
   }
   setErrors(errors);
   };
   return (
-    <form className="invite-form-container" onSubmit={(event) => { handleSubmit(event);  handleContributorChange(event); }}>
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "60vh" }}>
+    <form style={{ border: "1px solid blue", padding: "20px", width: "500px", height: "250px"}} className="invite-form-container" onSubmit={(event) => { handleSubmit(event);  handleContributorChange(event); }}>
     <label htmlFor="email" className="form-label">
       Email
     </label>
@@ -62,7 +65,7 @@ const InviteForm = () => {
     <label htmlFor="role" className="form-label">
       Role
     </label>
-    <select
+    <select 
       id="role"
       value={role}
       onChange={(event1) => setRole(event1.target.value)}
@@ -73,10 +76,13 @@ const InviteForm = () => {
       <option value="Maintainer">Maintainer</option>
 
     </select>
-    <button type="submit" onClick={(event) => {handleSubmit(event); handleContributorChange(event);}} className="btn-invite">
+    <div style={{display: "flex", justifyContent: "center"}} >
+    <button style={{marginTop :"10px",width:"200px"}} className="btn btn-primary w-40   rounded-pill" type="submit" onClick={(event) => {handleSubmit(event); handleContributorChange(event);}} >
       Inviter
     </button>
+    </div>
   </form>
+  </div>
   );
 };
 

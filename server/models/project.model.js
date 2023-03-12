@@ -3,11 +3,10 @@ import mongoose from "mongoose";
 const {Schema , model} = mongoose;
 const projectSchema = new Schema(
     {
-        user: { type: Schema.Types.ObjectId, 
-            ref: 'user' },
 
-    contributors: [{ type: Schema.Types.ObjectId, 
-        ref: 'contributor' }],
+    user: { type: Schema.Types.ObjectId, ref: 'user' },
+
+    contributors: [{ type: Schema.Types.ObjectId, ref: 'contributor' }],
 
     name: {
             type: String,

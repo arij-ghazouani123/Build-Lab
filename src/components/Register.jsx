@@ -23,7 +23,14 @@ const Register = () => {
 
   const [errors, setErrors] = useState({});
   const history = useHistory();
+  /*useEffect(() => {
+    const userRole = localStorage.getItem('rolefromtoken');
+    if (userRole !== 'Maintainer') {
+      window.alert("this route is for  Maintainers");
 
+      history.push('/'); // redirect to home page if user doesn't have the required role
+    }
+  }, [history]);*/
   const handleSubmit = (event) => {
     event.preventDefault();
     // validate the form fields

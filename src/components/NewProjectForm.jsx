@@ -35,6 +35,7 @@ export default function NewProjectForm() {
 
     // Button Click Handler
     function handleClick() {
+        window.alert("Your request has been completed successfully.")
 
         fetch('/project/addProject/', {
             method: 'POST',
@@ -67,7 +68,7 @@ export default function NewProjectForm() {
 
     return (
         <div style={{ width: 500, height: 500, padding: 10 }}>
-            <form style={{ border: "5px solid black", padding: 30 }}>
+            <form style={{ border: "2px solid blue", padding: 30 }}>
                 <div class="mb-3">
                     <label for="appNameInput" class="form-label">App Name</label>
                     <input type="text" class="form-control" id="appNameInput" value={name} onChange={handleNameChange} />
@@ -164,13 +165,6 @@ export default function NewProjectForm() {
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', margin: 20 }}>
                     <button type="button" class="btn btn-primary" onClick={handleClick}>Add New App</button>
-                    {showPopup && (
-                        <div className="popup">
-                            <h2>Request Complete!</h2>
-                            <p>Your request has been completed successfully.</p>
-                        </div>
-                    )}
-
                 </div>
 
 

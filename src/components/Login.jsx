@@ -72,8 +72,17 @@ const Login = () => {
         window.alert("Invalid Credentials")
       } else if (res.status === 200) {
         window.alert("Login Successfull");
-        window.location.reload();
-        history.push('/dashboard')
+        const data = await res.json();
+        localStorage.getItem("idfromtoken");
+        localStorage.setItem("idfromtoken",data.idfromtoken );
+        localStorage.getItem("emailformtoken");
+        localStorage.setItem("emailformtoken",data.emailformtoken );
+         
+        
+
+        console.log(data);
+       // window.location.reload();
+        history.push('/ProjectLits')
         // Token is generated When we Logged In.
         // Now we need to create Schema for Messages
       }

@@ -13,6 +13,7 @@ import Logout from './components/Logout';
 import Protectedroute from './ProtectedRoute';
 import InviteForm from './components/invitation';
 import { useEffect, useState } from 'react';
+import ProjectsList from './components/ProjectsList';
 
 
 
@@ -74,6 +75,7 @@ function App() {
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/invitation" component={InviteForm} />
         <Route exact path="/dashboard" component={Dashboard} />
+        <Route exact path="/ProjectLits" component={ProjectsList} />
 
         <Protectedroute exact path="/VerificationCode" component={VerificationCode} auth={auth1}/>
         <Protectedroute exact path="/VerificationMail" component={VerificationMail} auth={auth1}/>
