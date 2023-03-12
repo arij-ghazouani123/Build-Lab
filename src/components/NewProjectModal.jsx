@@ -9,7 +9,7 @@ export default function NewProjectModal() {
 
     return(
         <>
-        <button type="submit" className="btn btn-primary w-100 mt-4 rounded-pill" onClick={() => setModalIsOpen(true)} onRequestClose={() => setModalIsOpen(false)}> Add New Project</button>
+        <button type="button" class="btn btn-primary" onClick={() => setModalIsOpen(true)} onRequestClose={() => setModalIsOpen(false)}> Add New Project</button>
       <div>
         <Modal isOpen={modalIsOpen} style={{ width: 500, height: 500 }}>
           <div style={{ display: 'flex', justifyContent: 'flex-end' }}>

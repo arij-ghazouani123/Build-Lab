@@ -65,6 +65,7 @@ export function getUserRole(req, res) {
 
 
 
+
 // Delete project
 
 export function deleteProject(req, res) {
@@ -75,7 +76,7 @@ export function deleteProject(req, res) {
           .catch((err) => {
                res.status(500).json({ error: err });
           });
-}
+     }
 
 
 
@@ -102,6 +103,7 @@ export function updateProject(req, res) {
           }
      );
 };
+
 
 
 
