@@ -50,7 +50,7 @@ function RepositorySelect(props) {
     useEffect(() => {
         axios.get('https://api.github.com/user/repos', {
           headers: {
-            Authorization: `Bearer ${"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"}`,
+          Authorization: `Bearer ${"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"}`,
           },
         })
         .then(response => {
@@ -66,7 +66,7 @@ function RepositorySelect(props) {
     if (selectedRepository) {
       axios.get(`https://api.github.com/repos/${selectedRepository.full_name}/branches`, {
         headers: {
-          Authorization: `Bearer ${"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"}`,
+          Authorization: `Bearer ${"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"}`,
         },
       })
       .then(response => {
@@ -88,7 +88,7 @@ function RepositorySelect(props) {
         axios
           .get(logsUrl, {
             headers: {
-              Authorization: `Bearer ${"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"}`,
+          Authorization: `Bearer ${"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"}`,
               Accept: "application/vnd.github.v3.raw",
             },
             responseType: "blob",
@@ -114,7 +114,7 @@ function RepositorySelect(props) {
       },
       {
         headers: {
-          Authorization: `Bearer ${"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"}`,
+          Authorization: `Bearer ${"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"}`,
           Accept: "application/vnd.github.v3+json",
         },
         onUploadProgress: (progressEvent) => {
@@ -147,7 +147,7 @@ function RepositorySelect(props) {
                       // Download APK and attach it to the form data
                       const downloadArtifact = async (url) => {
                         const headers = {
-                          Authorization: `Bearer ${"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"}`,
+                        Authorization: `Bearer ${"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"}`,
                           Accept: 'application/vnd.github.v3+json',
                         };
                         const response = await fetch(url, { headers });
@@ -167,7 +167,8 @@ function RepositorySelect(props) {
                       const artifactUrl = await fetch(`https://api.github.com/repos/${owner}/${repo}/actions/artifacts?per_page=1&page=1`, {
                         headers: {
                           Accept: 'application/vnd.github.v3+json',
-                          Authorization: `Bearer ${"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"}`,
+                          Authorization: `Bearer ${"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"}`,
+
                         },
                       })
                         .then((response) => response.json())
