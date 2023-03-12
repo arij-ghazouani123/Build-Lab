@@ -1,0 +1,41 @@
+.artifact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    margin-top: 50px;
+  }
+  
+  .artifact-heading {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .artifact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .artifact-list li {
+    margin-bottom: 20px;
+  }
+  
+  .artifact-button {
+    background-color: #007aff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .artifact-button:hover {
+    background-color: #0062cc;
+  }
+  
+  .artifact-container {
+    width: 80vw;
+    height: 400px;
+  }
+  
