@@ -7,7 +7,7 @@ import {sendemail} from "../middlewares/emailinvitation.js";
 import { addProject,addContributorToProject} from "../controllers/contributor.js";
 
 import multer from 'multer';
-import { deleteProject, getUserPojects, getUserRole } from "../controllers/projet.js";
+import { deleteProject, getUserPojects, getUserRole, updateProject } from "../controllers/projet.js";
 
 const router = express.Router();
 
@@ -40,15 +40,19 @@ const router = express.Router();
 
   ////////////////////////////////////
 
-  router.route('/myProjects/:user')
+  router.route('/project/myProjects/:user')
         .get(getUserPojects)
 
 
- router.route('/myRole/:project/:user')
+ router.route('/project/myRole/:project/:user')
         .get(getUserRole)
 
 
- router.route('/deleteProject/:_id')
-        .delete(deleteProject)       
+ router.route('/project/deleteProject/:_id')
+        .delete(deleteProject)    
+        
+
+ router.route('/project/updateProject/:_id')
+        .put(updateProject) 
 
 export default router;

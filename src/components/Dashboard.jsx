@@ -319,7 +319,7 @@ const Dashboard = () => {
               </div>
             </div>
 
-            <h2>Section title</h2>
+            <h2>Projects Sections</h2>
             <ProjectsList/>
             <NewProjectModal/>
           </main>

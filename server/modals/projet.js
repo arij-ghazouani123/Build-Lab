@@ -8,6 +8,8 @@ const projectSchema = new Schema(
 
     contributors: [{ type: Schema.Types.ObjectId, 
         ref: 'contributor' }],
+        groups: [{type: Schema.Types.ObjectId, 
+            ref: 'group'}],
 
     name: {
             type: String,

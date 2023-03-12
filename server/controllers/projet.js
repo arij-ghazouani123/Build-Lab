@@ -64,12 +64,45 @@ export function getUserRole(req, res) {
 }
 
 
+
 // Delete project
 
-export function deleteProject(req,res) {
-
-     project.findOneAndDelete({_id :project.params._id})
+export function deleteProject(req, res) {
+     const projectId = req.params._id;
+     project.findOneAndDelete(projectId).then((docs) => {
+          res.status(200).send("Project deleted");
+     })
+          .catch((err) => {
+               res.status(500).json({ error: err });
+          });
 }
+
+
+
+//Update Project
+
+export function updateProject(req, res) {
+     const projectId =req.params._id
+
+     const updatedProject = {
+    name: req.body.name,
+    releaseType: req.body.releaseType,
+  };
+     project.updateOne({ _id: projectId }, updatedProject).then(
+          () => {
+               res.status(201).json({
+                    message: 'Project updated successfully!'
+               });
+          }
+     ).catch(
+          (error) => {
+               res.status(400).json({
+                    error: error
+               });
+          }
+     );
+};
+
 
 
 

@@ -31,7 +31,8 @@ export default function NewProjectForm() {
     };
 
 
-   const userId= localStorage.getItem("idfromtoken");
+   //const userId= localStorage.getItem("idfromtoken");
+   const userId= "63ff20b3f5330d6b2cb16d55";
 
     // Button Click Handler
     function handleClick() {
@@ -67,7 +68,7 @@ export default function NewProjectForm() {
 
     return (
         <div style={{ width: 500, height: 500, padding: 10 }}>
-            <form style={{ border: "5px solid black", padding: 30 }}>
+            <form style={{ border: "5px solid blue ", padding: 30 }}>
                 <div class="mb-3">
                     <label for="appNameInput" class="form-label">App Name</label>
                     <input type="text" class="form-control" id="appNameInput" value={name} onChange={handleNameChange} />
@@ -163,7 +164,7 @@ export default function NewProjectForm() {
 
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'flex-end', margin: 20 }}>
-                    <button type="button" class="btn btn-primary" onClick={handleClick}>Add New App</button>
+                    <button type="submit" className="btn btn-primary w-100 mt-4 rounded-pill" onClick={handleClick}>Add New App</button>
                     {showPopup && (
                         <div className="popup">
                             <h2>Request Complete!</h2>

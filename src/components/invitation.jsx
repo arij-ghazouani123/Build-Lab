@@ -4,21 +4,24 @@ import './InviteForm.css';
 const InviteForm = () => {
   const [email, setEmail] = useState('');
   const [role, setRole] = useState('');
+
   const [errors, setErrors] = useState({});
+  const  Project = localStorage.getItem("projectIdFromProjectLists");
 
-  const handleRoleChange =async (event1) => {
-    event1.preventDefault();
-
-    const response1 =  fetch('/updateuserrole', {
-        method: 'PUT',
+  const handleContributorChange =async (event3) => {
+    event3.preventDefault();
+    const response7 =  fetch(`/addcontributortoproject/${Project}`, {
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, role })
       });
   };
+  
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     let errors = {};
+
     if (email.trim() === '') {
       errors.email = 'Email is required';
     }
@@ -27,7 +30,7 @@ const InviteForm = () => {
       const senderemail = localStorage.getItem('emailformtoken');
       //recuperer l'id du projet -> projectname
       //const projectName = localStorage.getItem('projectID');
-      const response2 = fetch('/emailinvitation', {
+      const response2 = fetch(`/emailinvitation/${Project}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({  email, role, senderemail }),
@@ -41,7 +44,7 @@ const InviteForm = () => {
   setErrors(errors);
   };
   return (
-    <form className="invite-form-container" onSubmit={(event) => { handleSubmit(event); handleRoleChange(event) }}>
+    <form className="invite-form-container" onSubmit={(event) => { handleSubmit(event);  handleContributorChange(event); }}>
     <label htmlFor="email" className="form-label">
       Email
     </label>
@@ -70,7 +73,7 @@ const InviteForm = () => {
       <option value="Maintainer">Maintainer</option>
 
     </select>
-    <button type="submit" onClick={(event) => {handleSubmit(event); handleRoleChange(event)}} className="btn-invite">
+    <button type="submit" onClick={(event) => {handleSubmit(event); handleContributorChange(event);}} className="btn-invite">
       Inviter
     </button>
   </form>
