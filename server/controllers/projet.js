@@ -64,6 +64,13 @@ export function getUserRole(req, res) {
 }
 
 
+// Delete project
+
+export function deleteProject(req,res) {
+
+     project.findOneAndDelete({_id :project.params._id})
+}
+
 
 //Get Project Details ById 
 export async function afficherDetailsProjet(req,res) {
@@ -71,7 +78,7 @@ export async function afficherDetailsProjet(req,res) {
      try {
           const projectId = req.params._id;
          const Project = await project.findById(projectId)
-             .populate('user') 
+             .populate('user','username') 
              .populate('contributors') 
              .populate('name') 
              .populate('releaseType') 
