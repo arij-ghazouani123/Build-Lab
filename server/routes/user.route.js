@@ -4,10 +4,10 @@ import {   register,logIn,updateUserRole} from "../controllers/user.js";
 import Users from "../modals/user.js";
 import user from "../modals/user.js";
 import {sendemail} from "../middlewares/emailinvitation.js";
-import { addProject,addContributorToProject} from "../controllers/contributor.js";
+import { addProject,addContributorToProject,DeleteContributor} from "../controllers/contributor.js";
 
 import multer from 'multer';
-import { deleteProject, getUserPojects, getUserRole } from "../controllers/projet.js";
+import { deleteProject, getUserPojects, getUserRole,afficherDetailsProjet } from "../controllers/projet.js";
 
 const router = express.Router();
 
@@ -49,6 +49,11 @@ const router = express.Router();
 
 
  router.route('/deleteProject/:_id')
-        .delete(deleteProject)       
+        .delete(deleteProject)  
 
+router.route('/afficherDetailsProjet/:_id')
+        .get(afficherDetailsProjet)   
+
+router.route('/DeleteContributor/:_id1/:_id2/:_id3')
+        .delete(DeleteContributor)    
 export default router;

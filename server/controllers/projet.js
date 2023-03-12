@@ -72,4 +72,26 @@ export function deleteProject(req,res) {
 }
 
 
+//Get Project Details ById 
+export async function afficherDetailsProjet(req,res) {
+     
+     try {
+          const projectId = req.params._id;
+         const Project = await project.findById(projectId)
+             .populate('user') 
+             .populate('contributors') 
+             .populate('name') 
+             .populate('releaseType') 
+             .populate('opSystem') 
+             .populate('platform') 
+           
+         console.log(Project);
+     } catch (err) {
+         console.error(err);
+     }
+ }
+
+
+
+
 

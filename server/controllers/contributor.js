@@ -63,3 +63,38 @@ export async function addProject(req, res) {
     }
 }
 
+
+//////////////////////////////////////////////////////////
+
+export async function DeleteContributor(req,res) {
+  const projectId = req.params._id1; 
+  const contributorId = req.params._id2;
+   const deleterContributorId = req.params._id3;
+  // Get the project
+  const Project = await project.findById(projectId);
+
+  // Get the contributor who is deleting and check if they are a maintainer
+  const deleterContributor = await contributor.findById(deleterContributorId);
+  const isDeleterMaintainer = deleterContributor.role === 'Maintainer';
+
+  // If the deleter is not a maintainer, throw an error
+  if (!isDeleterMaintainer) {
+    throw new Error('Only Maintainers can remove contributors from a project');
+  }
+
+  // Get the contributor to be deleted
+  const Contributor = await contributor.findById(contributorId);
+
+  // Remove the contributor from the project
+  await contributor.findByIdAndDelete(contributorId);
+
+  // Remove the project reference from the contributor
+  await contributor.findByIdAndUpdate(contributorId, {
+    $pull: { projects: projectId },
+  });
+
+  // Remove the contributor reference from the project
+  await project.findByIdAndUpdate(projectId, {
+    $pull: { contributors: contributorId },
+  });
+};

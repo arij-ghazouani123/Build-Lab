@@ -22,15 +22,11 @@ const Navbar = (props) => {
         <li className="nav-item">
           <NavLink className="nav-link" to="/service">Services</NavLink>
         </li>
-        <li className="nav-item">
-          <NavLink className="nav-link" to="/invitation">Invitation</NavLink>
-        </li>
+       
         <li className="nav-item">
           <NavLink className="nav-link" to="/contact">Contact</NavLink>
         </li>
-        <li className="nav-item">
-          <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
-        </li>
+        
       </ul>
       <NavLink className="navbar-brand fw-bolder fs-4 mx-auto" to="/">BUILD-LAB</NavLink>
 

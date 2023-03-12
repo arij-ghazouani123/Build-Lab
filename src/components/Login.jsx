@@ -43,14 +43,12 @@ const Login = () => {
         localStorage.setItem("idfromtoken",data.idfromtoken );
         localStorage.getItem("emailformtoken");
         localStorage.setItem("emailformtoken",data.emailformtoken );
-        localStorage.getItem("rolefromtoken");
-        localStorage.setItem("rolefromtoken",data.rolefromtoken ); 
-        localStorage.getItem("projectid");
-        localStorage.setItem("projectid",data.projectid ); 
+         
+        
 
         console.log(data);
        // window.location.reload();
-        history.push('/')
+        history.push('/ProjectLits')
         // Token is generated When we Logged In.
         // Now we need to create Schema for Messages
       }
