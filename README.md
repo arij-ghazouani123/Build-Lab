@@ -158,6 +158,68 @@ The first step is to create a workflow file in your GitHub repository. The workf
 In your GitHub repository, create a new file in the .github/workflows directory. Name the file build.yml.
 
 Copy the following code into the fil:
+
+```html
+
+
+<script>
+name: Release Build
+on:
+  push:
+    tags:
+      - 'v*'
+jobs:
+  Build:
+    name: Build/Sign APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Get Tag
+        id: var
+        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
+
+      - name: Access Api keys
+        env:
+          apiKey: ${{ secrets.API_KEY }}
+          path: app/src/main/res/values/secrets.xml
+        run: |
+          touch $path
+          echo \<resources\> >> $path
+          echo \<string name=\"google_maps_key\"\>$apiKey\</string\> >> $path
+          echo \</resources\> >> $path
+      - name: Build APK
+        run: bash ./gradlew assembleRelease
+
+      - name: Sign APK
+        id: sign_apk
+        uses: r0adkll/sign-android-release@v1
+        with:
+          releaseDirectory: app/build/outputs/apk/release
+          signingKeyBase64: ${{ secrets.SIGNINGKEYBASE64 }}
+          alias: ${{ secrets.ALIAS }}
+          keyStorePassword: ${{ secrets.KEYSTOREPASSWORD }}
+          keyPassword: ${{ secrets.KEYPASSWORD }}
+
+      - name: Build Changelog
+        id: changelog
+        uses: ardalanamini/auto-changelog@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+     
+
+      - name: Upload APK
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ${{steps.sign_apk.outputs.signedReleaseFile}}
+          asset_name: GitamTransit-${{ steps.var.outputs.tag }}.apk
+          asset_content_type: application/zip
+</script>
+```
  
 
 
@@ -249,11 +311,7 @@ So that you can start straight away.
 - Push to the branch: `git push origin my-new-feature`
 - Submit a pull request
 
-## Development
 
-```bash
-npm run bootstrap && npm run dev
-```
 
 
 
