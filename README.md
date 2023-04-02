@@ -30,6 +30,27 @@
 - Usage
 - Contributing
  -License
+ 
+ 
+ ## Features
+ 
+- View and manage code repositories
+- Manage build and release pipelines
+- Monitor application performance and errors
+- Receive push notifications for important events
+- Collaborate with team members
+
+
+## Technologies Used
+
+- GitHub API
+- Github Workflows
+- React
+- Node js
+- Contributing
+ -License
+
+
 
 
 ## Build your Mobile app ( Android / IOS / Flutter )
