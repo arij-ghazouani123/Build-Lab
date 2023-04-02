@@ -60,6 +60,16 @@ In your GitHub repository, create a new file in the .github/workflows directory.
 
 Copy the following code into the fil:
 
+```html
+<script>
+  window.$docsify = {
+    repo: 'docsifyjs/docsify',
+    maxLevel: 3,
+    coverpage: true,
+  };
+</script>
+```
+
 
 <p align="center">
   <a href="https://docsify.js.org">
