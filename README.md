@@ -84,7 +84,6 @@ In your GitHub repository, create a new file in the .github/workflows directory.
 
 ## Build and Sign and Test Android Mobile Application
 
-
 Copy the following code into the fil:
 
 
