@@ -32,7 +32,7 @@
  -License
 
 
-## Build your mobile app
+## Build your Mobile app ( Android / IOS / Flutter )
 
 These projects are using docsify to generate their sites. Pull requests welcome :blush:
 
