@@ -82,7 +82,6 @@ In your GitHub repository, create a new file in the .github/workflows directory.
 </p>
 
 
-In your GitHub repository, create a new file in the .github/workflows directory. Name the file build.yml.
 
 Copy the following code into the fil:
 
