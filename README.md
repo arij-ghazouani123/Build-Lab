@@ -51,19 +51,9 @@
 
 
 
-## Build your Mobile app ( Android / IOS / Flutter )
+##  Build your Mobile app ( Android / IOS / Flutter )
 
-```Android APP
-<!-- index.html -->
-
-<body>
-  <nav>
-    <a href="#/">EN</a>
-    <a href="#/zh-cn/">简体中文</a>
-  </nav>
-  <div id="app"></div>
-</body>
-```
+# Buil Android Application
 
 - Step 1: Create a Workflow File
 The first step is to create a workflow file in your GitHub repository. The workflow file will define the steps that GitHub will take to build your mobile application.
