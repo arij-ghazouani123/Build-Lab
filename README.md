@@ -51,7 +51,7 @@
 
 
 
-#  Build and Sign and Test your Mobile app ( Android / IOS / Flutter )
+#  Build and Test Sign and Deplay in the Store your Mobile app ( Android / IOS / Flutter )
 
 - Create a Workflow File
 The first step is to create a workflow file in your GitHub repository. The workflow file will define the steps that GitHub will take to build your mobile application.
