@@ -237,7 +237,7 @@ jobs:
   </a>
 </p>
 
-## Step 2: Chose a Configuration To build you application 
+## Step 2: Choose a Configuration To build your application 
 
 <p align="center">
   <a href="https://docsify.js.org">
