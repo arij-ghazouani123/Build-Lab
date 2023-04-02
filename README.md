@@ -299,10 +299,8 @@ So that you can start straight away.
   <a target="_blank"><img src="./docs/_media/teamv5.png" width="100" style="display: inline-block; margin-right: 10px;"></a>
   <a target="_blank"><img src="./docs/_media/v1team.png" width="100" style="display: inline-block; margin-right: 10px;"></a>
 </div>
-## Contributors
 
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
-<a href="https://github.com/docsifyjs/docsify/graphs/contributors"><img src="https://opencollective.com/docsify/contributors.svg?width=890" /></a>
+
 
 ## License
 This project is licensed under the MIT License. See the LICENSE file for more information.
