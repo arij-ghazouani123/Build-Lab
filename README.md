@@ -53,9 +53,12 @@
 
 ## Build your Mobile app ( Android / IOS / Flutter )
 
-These projects are using docsify to generate their sites. Pull requests welcome :blush:
+#Step 1: Create a Workflow File
+The first step is to create a workflow file in your GitHub repository. The workflow file will define the steps that GitHub will take to build your mobile application.
 
-These projects are using docsify to generate their sites. Pull requests welcome :blush:
+In your GitHub repository, create a new file in the .github/workflows directory. Name the file build.yml.
+
+Copy the following code into the fil:
 
 
 <p align="center">
