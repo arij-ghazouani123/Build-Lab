@@ -62,11 +62,7 @@ Copy the following code into the fil:
 
 ```html
 <script>
-  window.$docsify = {
-    repo: 'docsifyjs/docsify',
-    maxLevel: 3,
-    coverpage: true,
-  };
+ dddddddddddddd
 </script>
 ```
 
