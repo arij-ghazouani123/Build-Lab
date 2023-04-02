@@ -36,7 +36,18 @@
 
 These projects are using docsify to generate their sites. Pull requests welcome :blush:
 
-Move to [awesome-docsify](https://github.com/docsifyjs/awesome-docsify#showcase)
+<p align="center">
+  <a href="https://docsify.js.org">
+    <img alt="docsify" src="./docs/_media/Buildlabicon.png">
+  </a>
+</p>
+
+
+<p align="center">
+  <a href="https://docsify.js.org">
+    <img alt="docsify" src="./docs/_media/Buildlabicon.png">
+  </a>
+</p>
 
 ## Similar projects
 
