@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://docsify.js.org">
-    <img alt="docsify" src="./docs/_media/icon.svg">
+    <img alt="docsify" src="./docs/_media/Buildlabicon.png">
   </a>
 </p>
 
@@ -37,13 +37,8 @@
 - Contributing
  -License
 
-## Quick start
 
-Look at [this tutorial](https://docsify.js.org/#/quickstart)
-
-[![Edit 307qqv236](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/307qqv236)
-
-## Showcase
+## Build your mobile app
 
 These projects are using docsify to generate their sites. Pull requests welcome :blush:
 
