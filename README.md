@@ -292,15 +292,13 @@ So that you can start straight away.
 
 
 ## Team
-
 <div style="white-space: nowrap;">
-  <a target="_blank"><img src="./docs/_media/teamv3.png" style="display: inline-block; margin-right: 10px;"></a>
-  <a target="_blank"><img src="./docs/_media/teamv2.png" style="display: inline-block; margin-right: 10px;"></a>
-  <a target="_blank"><img src="./docs/_media/teamv4.png" style="display: inline-block; margin-right: 10px;"></a>
-  <a target="_blank"><img src="./docs/_media/teamv5.png" style="display: inline-block; margin-right: 10px;"></a>
-  <a target="_blank"><img src="./docs/_media/v1team.png" style="display: inline-block; margin-right: 10px;"></a>
+  <a target="_blank"><img src="./docs/_media/teamv3.png" width="100" style="display: inline-block; margin-right: 10px;"></a>
+  <a target="_blank"><img src="./docs/_media/teamv2.png" width="100" style="display: inline-block; margin-right: 10px;"></a>
+  <a target="_blank"><img src="./docs/_media/teamv4.png" width="100" style="display: inline-block; margin-right: 10px;"></a>
+  <a target="_blank"><img src="./docs/_media/teamv5.png" width="100" style="display: inline-block; margin-right: 10px;"></a>
+  <a target="_blank"><img src="./docs/_media/v1team.png" width="100" style="display: inline-block; margin-right: 10px;"></a>
 </div>
-
 ## Contributors
 
 This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
