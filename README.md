@@ -62,6 +62,27 @@ In your GitHub repository, create a new file in the .github/workflows directory.
 
 Copy the following code into the fil:
 
+
+<p align="center">
+  <a href="https://docsify.js.org">
+    <img alt="docsify" src="./docs/_media/githubv1.png">
+  </a>
+</p>
+
+
+<p align="center">
+  <a href="https://docsify.js.org">
+    <img alt="docsify" src="./docs/_media/githubv2.png">
+  </a>
+</p>
+
+
+<p align="center">
+  <a href="https://docsify.js.org">
+    <img alt="docsify" src="./docs/_media/githubv5.png">
+  </a>
+</p>
+
 ```html
 
 <script>
@@ -192,25 +213,6 @@ jobs:
 
 
 
-<p align="center">
-  <a href="https://docsify.js.org">
-    <img alt="docsify" src="./docs/_media/githubv1.png">
-  </a>
-</p>
-
-
-<p align="center">
-  <a href="https://docsify.js.org">
-    <img alt="docsify" src="./docs/_media/githubv2.png">
-  </a>
-</p>
-
-
-<p align="center">
-  <a href="https://docsify.js.org">
-    <img alt="docsify" src="./docs/_media/githubv5.png">
-  </a>
-</p>
 
 These projects are using docsify to generate their sites. Pull requests welcome :blush:
 
