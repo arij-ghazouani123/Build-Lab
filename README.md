@@ -41,7 +41,7 @@ These projects are using docsify to generate their sites. Pull requests welcome 
 
 <p align="center">
   <a href="https://docsify.js.org">
-    <img alt="docsify" src="./docs/_media/Buildlabicon.png">
+    <img alt="docsify" src="./docs/_media/githubv1.png">
   </a>
 </p>
 
@@ -54,7 +54,7 @@ These projects are using docsify to generate their sites. Pull requests welcome 
 
 <p align="center">
   <a href="https://docsify.js.org">
-    <img alt="docsify" src="./docs/_media/Buildlabicon.png">
+    <img alt="docsify" src="./docs/_media/githubv2.png">
   </a>
 </p>
 
