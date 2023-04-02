@@ -224,6 +224,9 @@ This project exists thanks to all the people who contribute. [[Contribute](CONTR
 <a href="https://github.com/docsifyjs/docsify/graphs/contributors"><img src="https://opencollective.com/docsify/contributors.svg?width=890" /></a>
 
 ## License
+This project is licensed under the MIT License. See the LICENSE file for more information.
+
+In this example, the README file includes a project title, a table of contents, a list of features, a list of technologies used, installation instructions, usage instructions, contributing guidelines, and license information. The README is meant to provide a quick overview of the project and help other developers understand how to use and contribute to it.
 
 [MIT](LICENSE)
 
