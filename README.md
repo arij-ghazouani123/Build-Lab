@@ -251,32 +251,14 @@ jobs:
 
 <p align="center">
   <a href="https://docsify.js.org">
-    <img alt="docsify" src="./docs/_media/buildlabv5.png">
+    <img alt="docsify" src="./docs/_media/buildlabv6.png">
   </a>
 </p>
 
 
 
 
-These projects are using docsify to generate their sites. Pull requests welcome :blush:
 
-These projects are using docsify to generate their sites. Pull requests welcome :blush:
-
-
-These projects are using docsify to generate their sites. Pull requests welcome :blush:
-<p align="center">
-  <a href="https://docsify.js.org">
-    <img alt="docsify" src="./docs/_media/buildlabv5.png">
-  </a>
-</p>
-
-
-These projects are using docsify to generate their sites. Pull requests welcome :blush:
-
-These projects are using docsify to generate their sites. Pull requests welcome :blush:
-
-
-These projects are using docsify to generate their sites. Pull requests welcome :blush:
 
 ## Similar projects
 
