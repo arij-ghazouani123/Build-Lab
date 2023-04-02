@@ -53,7 +53,7 @@
 
 ## Build your Mobile app ( Android / IOS / Flutter )
 
-#Step 1: Create a Workflow File
+- Step 1: Create a Workflow File
 The first step is to create a workflow file in your GitHub repository. The workflow file will define the steps that GitHub will take to build your mobile application.
 
 In your GitHub repository, create a new file in the .github/workflows directory. Name the file build.yml.
