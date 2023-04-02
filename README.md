@@ -163,61 +163,71 @@ Copy the following code into the fil:
 
 
 <script>
-name: Release Build
+name: Flutter CI
+
+# This workflow is triggered on pushes to the repository.
+
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+    - Mondherbenhajammar_TODOS066
+    
+# on: push    # Default will running for every branch.
+    
 jobs:
-  Build:
-    name: Build/Sign APK
+  build:
+    # This job will run on ubuntu virtual machine
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Get Tag
-        id: var
-        run: echo ::set-output name=tag::${GITHUB_REF#refs/*/}
-
-      - name: Access Api keys
-        env:
-          apiKey: ${{ secrets.API_KEY }}
-          path: app/src/main/res/values/secrets.xml
-        run: |
-          touch $path
-          echo \<resources\> >> $path
-          echo \<string name=\"google_maps_key\"\>$apiKey\</string\> >> $path
-          echo \</resources\> >> $path
-      - name: Build APK
-        run: bash ./gradlew assembleRelease
-
-      - name: Sign APK
-        id: sign_apk
-        uses: r0adkll/sign-android-release@v1
-        with:
-          releaseDirectory: app/build/outputs/apk/release
-          signingKeyBase64: ${{ secrets.SIGNINGKEYBASE64 }}
-          alias: ${{ secrets.ALIAS }}
-          keyStorePassword: ${{ secrets.KEYSTOREPASSWORD }}
-          keyPassword: ${{ secrets.KEYPASSWORD }}
-
-      - name: Build Changelog
-        id: changelog
-        uses: ardalanamini/auto-changelog@v2
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-     
-
-      - name: Upload APK
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{steps.sign_apk.outputs.signedReleaseFile}}
-          asset_name: GitamTransit-${{ steps.var.outputs.tag }}.apk
-          asset_content_type: application/zip
+    
+    # Setup Java environment in order to build the Android app.
+    - uses: actions/checkout@v1
+    - uses: actions/setup-java@v1
+      with:
+        java-version: '12.x'
+    
+    # Setup the flutter environment.
+    - uses: subosito/flutter-action@v1
+      with:
+        channel: 'beta' # 'dev', 'alpha', default to: 'stable'
+        # flutter-version: '1.12.x' # you can also specify exact version of flutter
+    
+    # Get flutter dependencies.
+    - run: flutter pub get
+    
+    # Check for any formatting issues in the code.
+    - run: flutter format --set-exit-if-changed .
+    
+    # Statically analyze the Dart code for any errors.
+    - run: flutter analyze .
+    
+    # Run widget tests for our flutter project.
+    - run: flutter test
+    
+    # Build apk.
+    - run: flutter build apk
+    
+   # Creating the key.properties file
+    - run: |
+          echo keyPassword=\${{ secrets.KEY_STORE }} > ${{env.PROPERTIES_PATH}}
+          echo storePassword=\${{ secrets.KEY_PASSWORD }} >> ${{env.PROPERTIES_PATH}}
+          echo keyAlias=\${{ secrets.KEY_ALIAS }} >> ${{env.PROPERTIES_PATH}}
+          
+  # Decoding base64 key into a file
+    - run: echo "${{ secrets.KEYSTORE2 }}" | base64 --decode > android/app/key.jks
+    
+  # Make appbundle downloadable
+    - name: Upload artefato
+      uses: actions/upload-artifact@v2
+      with:
+          name: appbundle
+          path: build/app/outputs/bundle/release
+    
+    # Upload generated apk to the artifacts.
+    - uses: actions/upload-artifact@v1
+      with:
+        name: release-apk
+        path: build/app/outputs/apk/release/app-release.apk
 </script>
 ```
  
