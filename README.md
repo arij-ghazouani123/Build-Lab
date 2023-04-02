@@ -93,7 +93,6 @@ Copy the following code into the fil:
 ```html
 
 
-
 <script>
 name: Release Build
 on:
@@ -162,7 +161,7 @@ In your GitHub repository, create a new file in the .github/workflows directory.
 
 Copy the following code into the fil:
  
- <script>
+<script>
 name: Release Build
 on:
   push:
