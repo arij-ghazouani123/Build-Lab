@@ -293,12 +293,13 @@ So that you can start straight away.
 
 ## Team
 
-
-<a  target="_blank"><img src="./docs/_media/teamv3.png"></a>
-<a  target="_blank"><img src="./docs/_media/teamv2.png"></a>
-<a  target="_blank"><img src="./docs/_media/teamv4.png"></a>
-<a  target="_blank"><img src="./docs/_media/teamv5.png"></a>
-<a  target="_blank"><img src="./docs/_media/v1team.png"></a>
+<div style="white-space: nowrap;">
+  <a target="_blank"><img src="./docs/_media/teamv3.png" style="display: inline-block; margin-right: 10px;"></a>
+  <a target="_blank"><img src="./docs/_media/teamv2.png" style="display: inline-block; margin-right: 10px;"></a>
+  <a target="_blank"><img src="./docs/_media/teamv4.png" style="display: inline-block; margin-right: 10px;"></a>
+  <a target="_blank"><img src="./docs/_media/teamv5.png" style="display: inline-block; margin-right: 10px;"></a>
+  <a target="_blank"><img src="./docs/_media/v1team.png" style="display: inline-block; margin-right: 10px;"></a>
+</div>
 
 ## Contributors
 
