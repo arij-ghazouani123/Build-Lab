@@ -1,169 +1,127 @@
 <p align="center">
-  <a href="https://rahuldkjain.github.io/gh-profile-readme-generator">
-    <img alt="GitHub Profile Readme Generator" src="./src/images/mdg.png" width="60" />
+  <a href="https://docsify.js.org">
+    <img alt="docsify" src="./docs/_media/icon.svg">
   </a>
 </p>
-<h1 align="center">
-  Buildlab Devops Platform Mobile Application
-</h1>
 
 <p align="center">
-<a href="https://github.com/rahuldkjain/github-profile-readme-generator/blob/master/LICENSE" target="blank">
-<img src="https://img.shields.io/github/license/rahuldkjain/github-profile-readme-generator?style=flat-square" alt="github-profile-readme-generator license" />
-</a>
-<a href="https://github.com/rahuldkjain/github-profile-readme-generator/fork" target="blank">
-<img src="https://img.shields.io/github/forks/rahuldkjain/github-profile-readme-generator?style=flat-square" alt="github-profile-readme-generator forks"/>
-</a>
-<a href="https://github.com/rahuldkjain/github-profile-readme-generator/stargazers" target="blank">
-<img src="https://img.shields.io/github/stars/rahuldkjain/github-profile-readme-generator?style=flat-square" alt="github-profile-readme-generator stars"/>
-</a>
-<a href="https://github.com/rahuldkjain/github-profile-readme-generator/issues" target="blank">
-<img src="https://img.shields.io/github/issues/rahuldkjain/github-profile-readme-generator?style=flat-square" alt="github-profile-readme-generator issues"/>
-</a>
-<a href="https://github.com/rahuldkjain/github-profile-readme-generator/pulls" target="blank">
-<img src="https://img.shields.io/github/issues-pr/rahuldkjain/github-profile-readme-generator?style=flat-square" alt="github-profile-readme-generator pull-requests"/>
-</a>
-<a href="https://discord.gg/HHMs7Eg" target="blank">
-<img src="https://img.shields.io/discord/735303195105951764?label=Join%20Community&logo=discord&style=flat-square" alt="join discord community of github profile readme generator"/>
-</a>
-</p>
-
-<p align="center"><img src="./src/images/github-profile-readme-generator.gif" alt="github-profile-readme-generator gif" /></p>
-
-<p align="center">
-    <a href="https://rahuldkjain.github.io/gh-profile-readme-generator" target="blank">View Demo</a>
-    ·
-    <a href="https://github.com/rahuldkjain/github-profile-readme-generator/issues/new/choose">Report Bug</a>
-    ·
-    <a href="https://github.com/rahuldkjain/github-profile-readme-generator/issues/new/choose">Request Feature</a>
+  A magical documentation site generator.
 </p>
 
 <p align="center">
-<i>Loved the tool? Please consider <a href="https://paypal.me/rahuldkjain/10">donating</a>  💸 to help it improve!</i>
+  <a href="#backers"><img alt="Backers on Open Collective" src="https://opencollective.com/docsify/backers/badge.svg?style=flat-square"></a>
+  <a href="#sponsors">
+    <img alt="Sponsors on Open Collective" src="https://opencollective.com/docsify/sponsors/badge.svg?style=flat-square"></a>
+  <a href="https://github.com/docsifyjs/docsify/actions/workflows/test.yml"><img src="https://github.com/docsifyjs/docsify/actions/workflows/test.yml/badge.svg" alt="Build & Test"></a>
+  <a href="https://www.npmjs.com/package/docsify"><img alt="npm" src="https://img.shields.io/npm/v/docsify.svg?style=flat-square"></a>
+  <a href="https://github.com/QingWei-Li/donate"><img alt="donate" src="https://img.shields.io/badge/%24-donate-ff69b4.svg?style=flat-square"></a>
+  <a href="https://discord.gg/3NwKFyR"><img alt="Join Discord community and chat about Docsify" src="https://img.shields.io/discord/713647066802421792.svg?label=&logo=discord&logoColor=ffffff&color=7389D8&labelColor=6A7EC2&cacheSeconds=60"></a>
+  <a href="https://gitpod.io/#https://github.com/docsifyjs/docsify"><img src="https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod" alt="Gitpod Ready-to-Code"></a>
 </p>
+
+<p align="center">Gold Sponsor via <a href="https://opencollective.com/docsify">Open Collective</a></p>
 
 <p align="center">
-<a href="https://www.paypal.me/rahuldkjain"><img src="https://img.shields.io/badge/support-PayPal-blue?logo=PayPal&style=flat-square&label=Donate" alt="sponsor github profile readme generator"/>
-</a>
-<a href='https://ko-fi.com/A0A81XXSX' target='_blank'><img height='23' width="100" src='https://cdn.ko-fi.com/cdn/kofi3.png?v=2' alt='Buy Coffee for rahuldkjain' />
-</a>
-<a href="https://www.buymeacoffee.com/rahuldkjain" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="23" width="100" style="border-radius:1px" />
-</p>
-
-#### Tired of editing GitHub Profile README with new features?
-
-This tool provides an easy way to create a GitHub profile readme with the latest add-ons such as `visitors count`, `github stats`, etc.
-
-## 🚀 Demo
-
-<a href="https://rahuldkjain.github.io/gh-profile-readme-generator" target="blank">
-<img src="https://img.shields.io/website?url=https%3A%2F%2Frahuldkjain.github.io%2Fgh-profile-readme-generator&logo=github&style=flat-square" />
-</a>
-
-Try the tool: [GitHub Profile README Generator](https://rahuldkjain.github.io/gh-profile-readme-generator)
-
-## 🧐 Features
-
-Just fill in the details such as `Name`, `Tagline`, `Dev Platforms Username`, `Current Work`, `Portfolio`, `Blog`, etc. with a minimal UI.
-
-- **Uniform Dev Icons**
-
-- **Uniform Social Icons**
-
-- **Visitors Counter Badge**
-
-- **GitHub Profile Stats Card**
-
-- **GitHub Top Skills**
-
-- **GitHub Streak Stats**
-
-- **Dynamic Dev(.)to Blogs** (GitHub Action)
-
-- **Dynamic Medium Blogs** (GitHub Action)
-
-- **Dynamic Personal Blogs from RSS Feed** (GitHub Action)
-
-- **Wakatime Stats** [contribute](https://github.com/rahuldkjain/github-profile-readme-generator/issues/115)
-
-- **Buy Me A Coffee button**
-
-Click on `Generate README` to get your README in `markdown`.
-You can preview the README too.
-
-## 🛠️ Installation Steps
-
-1. Clone the repository
-
-```bash
-git clone https://github.com/rahuldkjain/github-profile-readme-generator.git
-```
-
-2. Change the working directory
-
-```bash
-cd github-profile-readme-generator
-```
-
-3. Install dependencies
-
-```bash
-npm install
-```
-
-4. Run the app
-
-```bash
-npm start
-```
-
-🌟 You are all set!
-
-## 🍰 Contributing
-
-Please contribute using [GitHub Flow](https://guides.github.com/introduction/flow). Create a branch, add commits, and [open a pull request](https://github.com/rahuldkjain/github-profile-readme-generator/compare).
-
-Please read [`CONTRIBUTING`](CONTRIBUTING.md) for details on our [`CODE OF CONDUCT`](CODE_OF_CONDUCT.md), and the process for submitting pull requests to us.
-
-## 💻 Built with
-
-- [Gatsby](https://www.gatsbyjs.com/)
-- [Tailwind CSS](https://tailwindcss.com/): for styling
-- [GSAP](https://greensock.com/gsap/): for small SVG Animations
-
-## 🙇 Special Thanks
-
-- [Anurag Hazra](https://github.com/anuraghazra) for amazing [github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
-- [Anton Komarev](https://github.com/antonkomarev) for super cool [github-profile-views-counter](https://github.com/antonkomarev/github-profile-views-counter)
-- [Gautam Krishna R](https://github.com/gautamkrishnar) for the awesome [blog post workflow](https://github.com/gautamkrishnar/blog-post-workflow)
-- [Jonah Lawrence](https://github.com/DenverCoder1) for the incredible [github-readme-streak-stats](https://github.com/DenverCoder1/github-readme-streak-stats)
-- [Julien Monty](https://github.com/konpa) for super useful [devicon](https://github.com/konpa/devicon)
-- [Eliot Sanford](https://github.com/techieeliot) for adding hashnode as a blog input
-
-## 🙇 Sponsors
-
-- [Scott C Wilson](https://github.com/scottcwilson) donated the first-ever grant to this tool. A big thanks to him.
-- [Max Schmitt](https://github.com/mxschmitt) loved the tool and showed support with his donation. Thanks a lot.
-- [Aadit Kamat](https://github.com/aaditkamat) find the tool useful and showed support with his donation. A big thanks to him.
-- [Jean-Michel Fayard](https://github.com/jmfayard) used the generator to create his GitHub Profile README and he loved it. Thanks to him for showing support to the tool with the donation.
-
-## 🙏 Support
-
-<p align="left">
-<a href="https://www.paypal.me/rahuldkjain/10"><img src="https://ionicabizau.github.io/badges/paypal.svg" alt="sponsor github profile readme generator"/>
-</a>
-<a href="https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Frahuldkjain.github.io%2Fgithub-profile-readme-generator">
-<img src="https://img.shields.io/twitter/url?style=social&url=https%3A%2F%2Frahuldkjain.github.io%2Fgithub-profile-readme-generator" alt="tweet github profile readme generator"/>
-</a>
-</p>
-
-<p align="left">
-  <a href='https://ko-fi.com/A0A81XXSX' target='_blank'><img height='23' width="100" src='https://cdn.ko-fi.com/cdn/kofi3.png?v=2' alt='Buy Coffee for rahuldkjain' />
+  <a href="https://opencollective.com/docsify/order/3254">
+    <img src="https://opencollective.com/docsify/tiers/gold-sponsor.svg?avatarHeight=36">
   </a>
-  <a href="https://www.buymeacoffee.com/rahuldkjain" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="23" width="100" style="border-radius:2px" />
 </p>
 
-<hr>
-<p align="center">
-Developed with ❤️ in India 🇮🇳 
-</p>
+## Links
+
+- [`develop` branch preview](https://docsify-preview.vercel.app/)
+- [Documentation](https://docsify.js.org)
+- [CLI](https://github.com/docsifyjs/docsify-cli)
+- CDN: [UNPKG](https://unpkg.com/docsify/) | [jsDelivr](https://cdn.jsdelivr.net/npm/docsify/) | [cdnjs](https://cdnjs.com/libraries/docsify)
+- [Awesome docsify](https://github.com/docsifyjs/awesome-docsify)
+- [Community chat](https://discord.gg/3NwKFyR)
+
+## Features
+
+- No statically built html files
+- Simple and lightweight
+- Smart full-text search plugin
+- Multiple themes
+- Useful plugin API
+- Compatible with IE11
+- Experimental SSR support ([example](https://github.com/docsifyjs/docsify-ssr-demo))
+- Support embedded files
+
+## Quick start
+
+Look at [this tutorial](https://docsify.js.org/#/quickstart)
+
+[![Edit 307qqv236](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/307qqv236)
+
+## Showcase
+
+These projects are using docsify to generate their sites. Pull requests welcome :blush:
+
+Move to [awesome-docsify](https://github.com/docsifyjs/awesome-docsify#showcase)
+
+## Similar projects
+
+| Project                                          | Description                              |
+| ------------------------------------------------ | ---------------------------------------- |
+| [docute](https://github.com/egoist/docute)       | 📜 Effortlessly documentation done right |
+| [docpress](https://github.com/docpress/docpress) | Documentation website generator          |
+
+## Contributing
+
+### Online one-click setup for Contributing
+
+You can use Gitpod (a free online VS Code-like IDE) for contributing. With a single click it'll launch a workspace and automatically:
+
+- clone the docsify repo.
+- install the dependencies.
+- start `npm run dev`.
+
+So that you can start straight away.
+
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/docsifyjs/docsify)
+
+- Fork it!
+- Create your feature branch: `git checkout -b my-new-feature`
+- Commit your changes: `git add . && git commit -m 'Add some feature'`
+- Push to the branch: `git push origin my-new-feature`
+- Submit a pull request
+
+## Development
+
+```bash
+npm run bootstrap && npm run dev
+```
+
+## Backers
+
+Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/docsify#backers)]
+
+<a href="https://opencollective.com/docsify#backers" target="_blank"><img src="https://opencollective.com/docsify/backers.svg?width=890"></a>
+
+## Sponsors
+
+Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/docsify#silver-sponsors)]
+
+<a href="https://opencollective.com/docsify/silver-sponsors/0/website" target="_blank"><img src="https://opencollective.com/docsify/silver-sponsors/0/avatar.svg"></a>
+<a href="https://opencollective.com/docsify/silver-sponsors/1/website" target="_blank"><img src="https://opencollective.com/docsify/silver-sponsors/1/avatar.svg"></a>
+<a href="https://opencollective.com/docsify/silver-sponsors/2/website" target="_blank"><img src="https://opencollective.com/docsify/silver-sponsors/2/avatar.svg"></a>
+<a href="https://opencollective.com/docsify/silver-sponsors/3/website" target="_blank"><img src="https://opencollective.com/docsify/silver-sponsors/3/avatar.svg"></a>
+<a href="https://opencollective.com/docsify/silver-sponsors/4/website" target="_blank"><img src="https://opencollective.com/docsify/silver-sponsors/4/avatar.svg"></a>
+<a href="https://opencollective.com/docsify/silver-sponsors/5/website" target="_blank"><img src="https://opencollective.com/docsify/silver-sponsors/5/avatar.svg"></a>
+<a href="https://opencollective.com/docsify/silver-sponsors/6/website" target="_blank"><img src="https://opencollective.com/docsify/silver-sponsors/6/avatar.svg"></a>
+<a href="https://opencollective.com/docsify/silver-sponsors/7/website" target="_blank"><img src="https://opencollective.com/docsify/silver-sponsors/7/avatar.svg"></a>
+<a href="https://opencollective.com/docsify/silver-sponsors/8/website" target="_blank"><img src="https://opencollective.com/docsify/silver-sponsors/8/avatar.svg"></a>
+<a href="https://opencollective.com/docsify/silver-sponsors/9/website" target="_blank"><img src="https://opencollective.com/docsify/silver-sponsors/9/avatar.svg"></a>
+
+## Contributors
+
+This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
+<a href="https://github.com/docsifyjs/docsify/graphs/contributors"><img src="https://opencollective.com/docsify/contributors.svg?width=890" /></a>
+
+## License
+
+[MIT](LICENSE)
+
+## Special Thanks
+
+A preview of Docsify's PR and develop branch is <a href="https://vercel.com/?utm_source=docsifyjs&utm_campaign=oss" target="_blank">Powered by <img src="https://cdn.jsdelivr.net/gh/docsifyjs/docsify/docs/_media/vercel_logo.svg" alt="Vercel" width="133px"></a>
