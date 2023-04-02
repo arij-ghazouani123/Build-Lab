@@ -262,10 +262,13 @@ jobs:
 
 ## Similar projects
 
-| Project                                          | Description                              |
-| ------------------------------------------------ | ---------------------------------------- |
-| [docute](https://github.com/egoist/docute)       | 📜 Effortlessly documentation done right |
-| [docpress](https://github.com/docpress/docpress) | Documentation website generator          |
+| Project                                              | Description                                            |
+| ---------------------------------------------------- | ------------------------------------------------------ |
+| [Fastlane](https://fastlane.tools/)                   | A toolchain for building, testing, and deploying iOS and Android apps |
+| [Bitrise](https://www.bitrise.io/)                   | A cloud-based continuous integration and delivery platform for mobile app development |
+| [AppCenter](https://docs.microsoft.com/en-us/appcenter/)                     | A suite of tools for building, testing, and distributing mobile apps |
+| [CirCleCi](https://github.com/microsoft/react-native-code-push) | A tool for deploying updates to mobile apps without going through the app store |
+       |
 
 ## Contributing
 
