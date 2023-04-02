@@ -197,15 +197,10 @@ So that you can start straight away.
 npm run bootstrap && npm run dev
 ```
 
-## Backers
 
-Thank you to all our backers! 🙏 [[Become a backer](https://opencollective.com/docsify#backers)]
 
-<a href="https://opencollective.com/docsify#backers" target="_blank"><img src="https://opencollective.com/docsify/backers.svg?width=890"></a>
+## Team
 
-## Sponsors
-
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website. [[Become a sponsor](https://opencollective.com/docsify#silver-sponsors)]
 
 <a href="https://opencollective.com/docsify/silver-sponsors/0/website" target="_blank"><img src="https://opencollective.com/docsify/silver-sponsors/0/avatar.svg"></a>
 <a href="https://opencollective.com/docsify/silver-sponsors/1/website" target="_blank"><img src="https://opencollective.com/docsify/silver-sponsors/1/avatar.svg"></a>
@@ -230,6 +225,3 @@ In this example, the README file includes a project title, a table of contents, 
 
 [MIT](LICENSE)
 
-## Special Thanks
-
-A preview of Docsify's PR and develop branch is <a href="https://vercel.com/?utm_source=docsifyjs&utm_campaign=oss" target="_blank">Powered by <img src="https://cdn.jsdelivr.net/gh/docsifyjs/docsify/docs/_media/vercel_logo.svg" alt="Vercel" width="133px"></a>
