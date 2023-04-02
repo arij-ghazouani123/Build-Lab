@@ -47,8 +47,6 @@
 - Github Workflows
 - React
 - Node js
-- Contributing
- -License
 
 
 
