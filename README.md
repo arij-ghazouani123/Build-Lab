@@ -60,8 +60,6 @@ The first step is to create a workflow file in your GitHub repository. The workf
 
 In your GitHub repository, create a new file in the .github/workflows directory. Name the file build.yml.
 
-Copy the following code into the fil:
-
 
 <p align="center">
   <a href="https://docsify.js.org">
