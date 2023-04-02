@@ -137,7 +137,7 @@ jobs:
 
 <p align="center">
   <a href="https://docsify.js.org">
-    <img alt="docsify" src="./docs/_media/githubv3.png">
+    <img alt="docsify" src="./docs/_media/githubv5.png">
   </a>
 </p>
 
