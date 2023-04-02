@@ -123,11 +123,16 @@ jobs:
 </script>
 ```
 ## Build and Sign and Test Android Application Buil Flutter Application
+
+
+- Step 1: Create a Workflow File
+The first step is to create a workflow file in your GitHub repository. The workflow file will define the steps that GitHub will take to build your mobile application.
+
+In your GitHub repository, create a new file in the .github/workflows directory. Name the file build.yml.
+
+Copy the following code into the fil:
  
- 
- 
- 
-<script>
+ <script>
 name: Release Build
 on:
   push:
