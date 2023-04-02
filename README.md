@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  A magical documentation site generator.
+  This mobile application is designed to help developers and IT professionals manage their DevOps workflows from their mobile devices
 </p>
 
 <p align="center">
@@ -27,25 +27,15 @@
   </a>
 </p>
 
-## Links
 
-- [`develop` branch preview](https://docsify-preview.vercel.app/)
-- [Documentation](https://docsify.js.org)
-- [CLI](https://github.com/docsifyjs/docsify-cli)
-- CDN: [UNPKG](https://unpkg.com/docsify/) | [jsDelivr](https://cdn.jsdelivr.net/npm/docsify/) | [cdnjs](https://cdnjs.com/libraries/docsify)
-- [Awesome docsify](https://github.com/docsifyjs/awesome-docsify)
-- [Community chat](https://discord.gg/3NwKFyR)
+## Table of Contents
 
-## Features
-
-- No statically built html files
-- Simple and lightweight
-- Smart full-text search plugin
-- Multiple themes
-- Useful plugin API
-- Compatible with IE11
-- Experimental SSR support ([example](https://github.com/docsifyjs/docsify-ssr-demo))
-- Support embedded files
+- Features
+- Technologies Used
+- Installation
+- Usage
+- Contributing
+ -License
 
 ## Quick start
 
