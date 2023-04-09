@@ -15,7 +15,7 @@ const Register = () => {
       const res = await axios.post('/register', newUser);
       console.log(res.data);
       localStorage.setItem("email", email);
-      history.push('/'); // navigate to the next page
+      history.push('/login'); // navigate to the next page
     } catch (err) {
       console.log(err);
     }

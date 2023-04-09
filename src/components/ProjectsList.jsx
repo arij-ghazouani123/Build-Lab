@@ -5,6 +5,7 @@ import NewProjectModal from './NewProjectModal';
 import Afficheprojectmodel from './afficheprojectModel';
 import ProjectDetails from './afficheprojectDetails';
 import UpdateProjectModal from './UpdateProjectModal ';
+import { useHistory } from 'react-router-dom';
 
 
 export default function ProjectsList() {
@@ -13,6 +14,7 @@ export default function ProjectsList() {
     const [data, setData] = useState([]);
     const [ids, setIds] = useState([]);
     const [showDetails, setShowDetails] = useState(false);
+    const history = useHistory();
 
     const handleDeleteChange = async (event3) => {
         event3.preventDefault();
@@ -44,8 +46,24 @@ export default function ProjectsList() {
         console.log(`Clicked on project ${id}`);
         localStorage.setItem('projectIdFromProjectLists', id);
         // Store the id in state or local storage
-        return id
+        //history.push('/register')
+        return (id)
+        
     }
+    function handleInviteClick(id){
+        console.log(`Clicked on project ${id}`);
+        localStorage.setItem('projectIdFromProjectLists', id);
+        // Store the id in state or local storage
+        return (id, history.push('/invitation'))
+    }
+    
+    function handleDashboardClick(id) {
+        console.log(`Clicked on project ${id}`);
+        localStorage.setItem('projectIdFromProjectLists', id);
+        // Store the id in state or local storage
+        return (id, history.push('/dashboard'))
+    }
+
 
     function handleDetailsClose() {
         setShowDetails(false);
@@ -76,7 +94,9 @@ export default function ProjectsList() {
                                 <button type="button" class="btn btn-danger  w-30 rounded-pill" onClick={(event) => {
                                     handleRowClick(item._id); handleDeleteChange(event);
                                 }}>Delete</button>
-                                <button type="button" class="btn btn-primary  w-30 rounded-pill" onClick={() => handleRowClick(item._id)} ><NavLink to="/invitation">Invite</NavLink></button>
+                                {/* <button type="button" class="btn btn-primary  w-30 rounded-pill" onClick={() => handleRowClick(item._id)} ><NavLink to="/invitation">Invite</NavLink></button> */}
+                                <button type="button" class="btn btn-primary  w-30 rounded-pill" onClick={() => handleInviteClick(item._id)}>Invite</button>
+                                <button type='button' class="btn btn-primary  w-30 rounded-pill" onClick={() => handleDashboardClick(item._id)}>Your space</button>
                                 {showDetails && <ProjectDetails itemId={handleRowClick(item._id)} onClose={handleDetailsClose} />}
                                 <Afficheprojectmodel itemId={handleRowClick(item._id)} />
                             </td>

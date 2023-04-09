@@ -43,7 +43,7 @@ const Navbar = (props) => {
                 <NavLink className="nav-link" to="/contact">{t('Contact')}</NavLink>
               </li>
               <li className="nav-item">
-                <NavLink className="nav-link" to="/dashboard">{t('Dashboard')}</NavLink>
+                <NavLink className="nav-link" to="/Second">{t('Dashboard')}</NavLink>
               </li>
             </ul>
 

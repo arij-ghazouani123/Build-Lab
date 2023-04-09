@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 
 const SettingsPage = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  //const [isDarkMode, setIsDarkMode] = useState(false);
   const [email, setEmail] = useState('user@example.com');
   const [username, setUsername] = useState('user123');
   const { t, i18n } = useTranslation();
@@ -14,9 +14,9 @@ const SettingsPage = () => {
     i18n.changeLanguage(selectedLanguage);
   };
 
-  const handleDarkModeChange = (event) => {
-    setIsDarkMode(event.target.checked);
-  };
+  // const handleDarkModeChange = (event) => {
+  //   setIsDarkMode(event.target.checked);
+  // };
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -47,8 +47,8 @@ const SettingsPage = () => {
           </select>
         </div>
         <div className="mb-3 form-check">
-          <input type="checkbox" className="form-check-input" id="darkModeCheckbox" checked={isDarkMode} onChange={handleDarkModeChange} />
-          <label className="form-check-label" htmlFor="darkModeCheckbox">{t('darkMode')}</label>
+          {/* <input type="checkbox" className="form-check-input" id="darkModeCheckbox" checked={isDarkMode} onChange={handleDarkModeChange} /> */}
+          {/* <label className="form-check-label" htmlFor="darkModeCheckbox">{t('darkMode')}</label> */}
         </div>
         <div className="mb-3">
           <label htmlFor="emailInput" className="form-label">{t('email')}</label>

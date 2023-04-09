@@ -33,7 +33,7 @@ const InviteForm = () => {
     }
   
     if (Object.keys(errors).length === 0) {
-      const senderemail = localStorage.getItem('emailformtoken');
+      const senderemail = localStorage.getItem('emailfromtoken');
       //recuperer l'id du projet -> projectname
       //const projectName = localStorage.getItem('projectID');
       const response2 = fetch(`/emailinvitation/${Project}`, {
@@ -49,7 +49,7 @@ const InviteForm = () => {
       });
       localStorage.setItem('EmailFromInvitation', JSON.stringify(email));
       localStorage.setItem('RoleFromInvitation', JSON.stringify(role));
-      history.push('/ProjectLits')
+      history.push('/ProjectList')
     // Logic to send invitation using email, projectName and role
   }
   setErrors(errors);

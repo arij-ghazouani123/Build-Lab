@@ -136,7 +136,15 @@
     "uuid": "^8.3.2",
     "vary": "^1.1.2",
     "webidl-conversions": "^7.0.0",
-    "whatwg-url": "^11.0.0"
+    "whatwg-url": "^11.0.0",
+    "lowdb": "^5.0.5",
+    "moment": "^2.29.4",
+    "mongoose-date-format": "^1.2.0",
+    "nanoid": "^4.0.0",
+    "node-fetch": "^3.3.0",
+    "passport": "^0.6.0",
+    "swagger-jsdoc": "^6.2.7",
+    "swagger-ui-express": "^4.6.0"
   },
   "keywords": [],
   "author": "",

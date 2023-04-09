@@ -4,6 +4,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Services from './components/Services';
 import Contact from './components/Contact';
+
 import Footer from './components/Footer';
 import {Route, Switch} from 'react-router';
 import Login from './components/Login';
@@ -25,9 +26,10 @@ import EmailForm from './components/ForgotPassword';
 import ReactSwitch from 'react-switch';
 import ProjectsList from './components/ProjectsList';
 import ConnectToStore from './components/ConnectToStore';
+import Repository from 'github-api/dist/components/Repository';
 
 function App() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  //const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Check If User is Logged In
   const [auth, setauth] = useState(false);
@@ -65,7 +67,8 @@ function App() {
   return (
    
     <div >
-      <ReactSwitch checked={isDarkMode} onChange/>
+      {/* <ReactSwitch checked={isDarkMode} onChange/> */}
+      <ReactSwitch/>
       <Navbar auth={auth1}/>
       <Switch>
         <Route exact path="/" component={Home} />
@@ -75,6 +78,7 @@ function App() {
         <Route exact path="/invitation" component={InviteForm} />
         <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/ProjectList" component={ProjectsList} />
+      
         <Protectedroute exact path="/payment" component={PaymentForm} auth={auth1}/>
 
         <Protectedroute exact path="/VerificationCode" component={VerificationCode} auth={auth1}/>
@@ -89,8 +93,6 @@ function App() {
         <Protectedroute exact path="/dashboard" component={Dashboard} auth={auth}/>
         <Protectedroute exact path="/logout" component={Logout} auth={auth}/>
         <Route exact path="/ForgotPassword" component={EmailForm} />
-
-
       </Switch>
       <Footer/>
       </div>

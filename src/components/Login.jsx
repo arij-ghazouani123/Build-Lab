@@ -22,12 +22,12 @@ const HandleGithubLogin = () => {
 
 const Login = () => {
 
-  const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light')
+  // const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light')
 
-  const switchTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme)
-  }
+  // const switchTheme = () => {
+  //   const newTheme = theme === 'light' ? 'dark' : 'light';
+  //   setTheme(newTheme)
+  // }
 
   const history = useHistory()
 
@@ -74,7 +74,8 @@ const Login = () => {
         window.alert("Login Successfull");
         const data = await res.json();
         localStorage.setItem("idfromtoken", data.idfromtoken);
-        history.push('/dashboard');
+        localStorage.setItem("emailfromtoken", data.emailfromtoken);
+        history.push('/ProjectList');
         
         // Token is generated When we Logged In.
         // Now we need to create Schema for Messages
@@ -161,7 +162,7 @@ const Login = () => {
                   Login
                 
               </button>
-              <i onClick={switchTheme} class='fas fa-toggle-on'></i>
+              {/* <i onClick={switchTheme} class='fas fa-toggle-on'></i> */}
               <center>
                 <div className="form-text" >
                   Or you can

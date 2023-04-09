@@ -5,14 +5,14 @@
     --text-color: #2c444e;
   }
   
-  @media (prefers-color-scheme: dark) {
+  /* @media (prefers-color-scheme: dark) {
     :root {
       --primary-color: #46045e;
       --secondary-color: rgba(179, 0, 255, 1);
       --background-color: #38004c;
       --text-color: #f3ebf6;
     }
-  }
+  } */
   
   /* Home */
   #home {
@@ -27,17 +27,17 @@
   #light {
     background-color: var(--background-color);
   }
-  #dark {
+  /* #dark {
     background-color: var(--background-color);
-  }
+  } */
   
   #light .main {
     background-color: var(--background-color);
   }
   
-  #dark .main {
+  /* #dark .main {
     background-color: var(--background-color);
-  }
+  } */
   
   /* Cards */
   .card {

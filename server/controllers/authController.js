@@ -112,18 +112,19 @@ export async function login(req, res) {
     return res.status(401).send("Invalid credentials");
   }
 
-  const newToken =  jwt.sign({ utilisateur }, process.env.TOKENKEY, {
-    expiresIn: "4d",
-  });
+  // const newToken =  jwt.sign({ utilisateur }, process.env.TOKENKEY, {
+  //   expiresIn: "4d",
+  // });
 
-  user.token = newToken;
+  // user.token = newToken;
   const secret = crypto.randomBytes(64).toString('hex');
-  const token = jwt.sign({ Id: utilisateur._id }, secret, { expiresIn: '1h' });
+  const token = jwt.sign({ Id: utilisateur._id, email: utilisateur.email }, secret, { expiresIn: '1h' });
   const decoded = jwt.verify(token, secret);
 
   const id1 = decoded.Id;
+  const email1 =decoded.email;
   console.log(id1);
-  return res.json({  idfromtoken: id1 });
+  return res.json({  idfromtoken: id1,emailfromtoken:email1 });
 /*
   try {
     await user.updateOne({ _id: user._id, token: newToken });
