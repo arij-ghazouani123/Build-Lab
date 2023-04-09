@@ -1,24 +1,39 @@
-import mongoose from "mongoose";
- 
-const {Schema , model} = mongoose;
-const userSchema = new Schema(
-    {
-     username: {
-            type: String,
-            required : true
-        },
+import mongoose, { Schema , model} from"mongoose";
 
-    email: {
-        type: String,
-        required: true
-
+const userSchema=new Schema(
+  {
+    userName:{
+      type:String,
+      require:true
     },
-    password: {
-        type: String,
-        required: true
-
+    email:{
+      type:String,
+      require:true
+    },
+    password:{
+      type:String
+    },
+    token:{
+      type:String
+    },
+    ProfilePhoto:{
+      type:String
+    },
+    resetTokens:{
+      type:String,
+      default:""
+    },
+  
+    OTPReset: {
+      type: String,
+      default:null
     }
+    ,
+    Verified: {
+      type: Boolean,
+      default: true,
+    },
+  }
+);
+export default model("user",userSchema);
 
-});
-
-export default model ("user",userSchema);

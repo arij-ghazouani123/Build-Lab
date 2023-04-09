@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
+import mixpanel from 'mixpanel-browser';
 import './InviteForm.css';
+mixpanel.init('24382e06ab44f0ebb6a5e1913b4d5862',{
+  debug: true 
+});
 const InviteForm = () => {
   const [email, setEmail] = useState('');
   const [role, setRole] = useState('');
@@ -37,6 +41,11 @@ const InviteForm = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({  email, role, senderemail }),
         
+      });
+      mixpanel.track(' Email Invitation to Project', {
+        'User_Email': email,
+        'Role_Added_To_The_User': role,
+
       });
       localStorage.setItem('EmailFromInvitation', JSON.stringify(email));
       localStorage.setItem('RoleFromInvitation', JSON.stringify(role));

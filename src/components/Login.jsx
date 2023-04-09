@@ -1,63 +1,94 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { useHistory } from "react-router";
+import styles from "./styles.module.css";
+import { Link } from "react-router-dom";
+import useLocalStorage from 'use-local-storage'
+
+
+
+
+const HandleGithubLogin = () => {
+  const clientId = 'YOUR_GITHUB_CLIENT_ID';
+  const redirectUri = 'http://localhost9090/';
+  const scope = 'user';
+
+  const url = `https://github.com/login/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}`;
+
+
+  window.location.href = url;
+}
+
 
 const Login = () => {
 
+  const [theme, setTheme] = useLocalStorage('theme' ? 'dark' : 'light')
+
+  const switchTheme = () => {
+    const newTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(newTheme)
+  }
+
   const history = useHistory()
 
+  const GoogleAuth = () => {
+    window.open(
+      `${process.env.REACT_APP_API_URL}/auth/google/callback`,
+      "_self"
+    );
+  };
+
   const [user, setUser] = useState({
-    email : '',
-    password : ''
+    email: '',
+    password: '',
+    token: ''
   });
 
   // Handle Input
-  const handleChange = (event) =>{
+  const handleChange = (event) => {
     let name = event.target.name
     let value = event.target.value
 
-    setUser({...user, [name]:value})
+    setUser({ ...user, [name]: value })
   }
 
   // Handle Login
-  const handleSubmit = async (event) =>{
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const {email, password} = user;
+    const { email, password } = user;
     try {
       const res = await fetch('/login', {
-        method : "POST",
-        headers : {
-          "Content-Type" : "application/json"
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
         },
-        body : JSON.stringify({
-          email, password
+        body: JSON.stringify({   
+          email,
+          password
         })
       });
 
-      if(res.status === 400 || !res){
+      if (res.status === 400 || !res) {
         window.alert("Invalid Credentials")
-      }else{
+      } else if (res.status === 200) {
         window.alert("Login Successfull");
         const data = await res.json();
-        localStorage.getItem("idfromtoken");
-        localStorage.setItem("idfromtoken",data.idfromtoken );
-        localStorage.getItem("emailformtoken");
-        localStorage.setItem("emailformtoken",data.emailformtoken );
-         
+        localStorage.setItem("idfromtoken", data.idfromtoken);
+        history.push('/dashboard');
         
-
-        console.log(data);
-       // window.location.reload();
-        history.push('/ProjectLits')
         // Token is generated When we Logged In.
         // Now we need to create Schema for Messages
       }
 
     } catch (error) {
-      console.log(error); 
+      console.log(error);
     }
   }
-return (
+
+
+
+
+  return (
     <div>
       <div className="container shadow my-5">
         <div className="row">
@@ -85,7 +116,7 @@ return (
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
                   name="email"
-                  value={user.email}
+                  value={user.Email}
                   onChange={handleChange}
                 />
                 <div id="emailHelp" className="form-text">
@@ -105,19 +136,51 @@ return (
                   onChange={handleChange}
                 />
               </div>
-              <div className="mb-3 form-check">
-                <input
-                  type="checkbox"
-                  className="form-check-input"
-                  id="exampleCheck1"
-                />
-                <label className="form-check-label" htmlFor="exampleCheck1">
-                  Remember me
-                </label>
+              <div className="mb-3">
+
+                <Link to="/ForgotPassword" className="btn btn-link">
+                  Forgot password
+                </Link>
               </div>
+              <div className="mb-3 ">
+
+
+                <Link to="/TermsAndConditions" className="btn btn-link">
+                  Terms And Conditions
+                </Link>
+
+                <Link to="/payment" className="btn btn-link">
+                    payment 
+                    
+                  </Link>
+              
+              </div>
+
               <button type="submit" className="btn btn-primary w-100 mt-4 rounded-pill">
-                Login
+               
+                  Login
+                
               </button>
+              <i onClick={switchTheme} class='fas fa-toggle-on'></i>
+              <center>
+                <div className="form-text" >
+                  Or you can
+                </div>
+              </center>
+
+
+              <button className={styles.google_btn} onClick={GoogleAuth}>
+                <img src="./assets/google.png" alt="google icon" />
+                <span>Sign in with Google</span>
+              </button>
+
+              <button type="submit" className={styles.google_btn}>
+                <img src="./assets/Github.png" alt="google icon" onClick={HandleGithubLogin} />
+                <span>Sign in with Github</span>
+              </button>
+
+
+
             </form>
           </div>
         </div>
@@ -127,3 +190,5 @@ return (
 };
 
 export default Login;
+
+

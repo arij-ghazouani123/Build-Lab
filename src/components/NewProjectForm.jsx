@@ -5,7 +5,7 @@ import React, { useState } from 'react';
 
 
 export default function NewProjectForm() {
-    
+
 
     const [name, setName] = useState("");
     const [releaseType, setReleaseType] = useState("");
@@ -31,7 +31,7 @@ export default function NewProjectForm() {
     };
 
 
-   const userId= localStorage.getItem("idfromtoken");
+    const userId = localStorage.getItem("idfromtoken");
 
     // Button Click Handler
     function handleClick() {

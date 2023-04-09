@@ -1,28 +1,27 @@
 import  express  from "express";
 import { body } from "express-validator";
-import {   register,logIn,updateUserRole} from "../controllers/user.js";
 import Users from "../modals/user.js";
 import user from "../modals/user.js";
 import {sendemail} from "../middlewares/emailinvitation.js";
-import { addProject,addContributorToProject,DeleteContributor} from "../controllers/contributor.js";
+import { addProject,addContributorToProject, DeleteContributor} from "../controllers/contributor.js";
+import { register, login, logout, sendOTPResetEmail, resetPassword, emailVerification, createCheckOutSession, } from "../controllers/authController.js";
 
 import multer from 'multer';
-import { deleteProject, getUserPojects, getUserRole,afficherDetailsProjet, updateProject } from "../controllers/projet.js";
+import { afficherDetailsProjet, deleteProject, getUserPojects, getUserRole, updateProject } from "../controllers/projet.js";
 
 const router = express.Router();
 
 
-/////////////////////////////////User
- router.route('/register').post(
-    body('username').isLength({ min: 3}),
-    body('email').isEmail(),
-    body('password').isLength({ min: 3}),
-    register); 
+router.route("/register").post(register);
+router.route("/login").post(login);
+router.route("/logout/:id").post(logout);
+router.route("/OTPReset").post(sendOTPResetEmail);
+router.route("/ResetPassword").post(resetPassword);
+router.route("/emailVerification").post(emailVerification);
+router.route("/createCheckOutSession").post(createCheckOutSession);
 
-    router.route('/login').post(logIn);
-        
- ////////////////////////////////////////////
-    router.route('/project/addProject/').post(
+
+router.route('/project/addProject/').post(
         body('user'),
         body('name'),
         body('releaseType'),
@@ -35,28 +34,27 @@ const router = express.Router();
         body('role'),
         addContributorToProject)
 
-  router.route('/emailinvitation/:Project').post(sendemail);
-  router.route('/updateuserrole').put(updateUserRole);
 
-  ////////////////////////////////////
+////////////////////////////////////////////////////////////////
+  router.route('/emailinvitation/:Project').post(sendemail);
+
 
 router.route('/project/myProjects/:user')
-        .get(getUserPojects)
-
+       .get(getUserPojects)
 
 router.route('/project/myRole/:project/:user')
-        .get(getUserRole)
+       .get(getUserRole)
 
 
- router.route('/project/deleteProject/:_id')
-        .delete(deleteProject)  
+router.route('/project/deleteProject/:_id')
+       .delete(deleteProject)
 
 router.route('/project/updateProject/:_id')
-        .put(updateProject)  
+       .put(updateProject)
 
 router.route('/afficherDetailsProjet/:_id')
-        .get(afficherDetailsProjet)   
+       .get(afficherDetailsProjet)
 
 router.route('/DeleteContributor/:_id1/:_id2/:_id3')
-        .delete(DeleteContributor)    
+       .delete(DeleteContributor)
 export default router;

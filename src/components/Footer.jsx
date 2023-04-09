@@ -1,7 +1,14 @@
-import React from "react";
+import React, { useState, Suspense } from 'react';
 import { NavLink } from "react-router-dom";
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t, i18n } = useTranslation();
+  const handleLanguageChange = (event) => {
+    const selectedLanguage = event.target.value;
+    i18n.changeLanguage(selectedLanguage);
+  };
+
   return (
     <div>
       <footer className="footer text-white">
@@ -10,24 +17,32 @@ const Footer = () => {
             <div className="row">
               <div className="col-3">
                 <h4>BUILD-LAB</h4>
+                <select className="form-select" id="languageSelect" value={i18n.language} onChange={handleLanguageChange}>
+                  <option value="en">{t('english')}</option>
+                  <option value="fr">{t('french')}</option>
+                  <option value="chi">{t('chinese')}</option>
+                  <option value="ko">{t('korean')}</option>
+                </select>
               </div>
 
+              
+
               <div className="col-2">
-                <h5>Section</h5>
+                <h5>{t('Section')}</h5>
                 <ul className="nav flex-column">
                   <li className="nav-item mb-2">
                     <NavLink to="#" className="nav-link p-0 text-white">
-                      Home
+                    {t('Home')}
                     </NavLink>
                   </li>
                   <li className="nav-item mb-2">
                     <NavLink to="#" className="nav-link p-0 text-white">
-                      Features
+                    {t('Features')}
                     </NavLink>
                   </li>
                   <li className="nav-item mb-2">
                     <NavLink to="#" className="nav-link p-0 text-white">
-                      Pricing
+                    {t('Pricing')}
                     </NavLink>
                   </li>
                   <li className="nav-item mb-2">
@@ -37,38 +52,7 @@ const Footer = () => {
                   </li>
                   <li className="nav-item mb-2">
                     <NavLink to="#" className="nav-link p-0 text-white">
-                      About
-                    </NavLink>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="col-2">
-                <h5>Section</h5>
-                <ul className="nav flex-column">
-                  <li className="nav-item mb-2">
-                    <NavLink to="#" className="nav-link p-0 text-white">
-                      Home
-                    </NavLink>
-                  </li>
-                  <li className="nav-item mb-2">
-                    <NavLink to="#" className="nav-link p-0 text-white">
-                      Features
-                    </NavLink>
-                  </li>
-                  <li className="nav-item mb-2">
-                    <NavLink to="#" className="nav-link p-0 text-white">
-                      Pricing
-                    </NavLink>
-                  </li>
-                  <li className="nav-item mb-2">
-                    <NavLink to="#" className="nav-link p-0 text-white">
-                      FAQs
-                    </NavLink>
-                  </li>
-                  <li className="nav-item mb-2">
-                    <NavLink to="#" className="nav-link p-0 text-white">
-                      About
+                      {t('About')}
                     </NavLink>
                   </li>
                 </ul>
@@ -76,11 +60,12 @@ const Footer = () => {
 
               <div className="col-4 offset-1">
                 <form>
-                  <h5>Subscribe to our newsletter</h5>
-                  <p>Monthly digest of whats new and exciting from us.</p>
+               
+                  <h5>{t('Subscribe to our newsletter')}</h5>
+                  <p>{t('Monthly digest of whats new and exciting from us.')}</p>
                   <div className="d-flex w-100 gap-2">
                     <label htmlFor="newsletter1" className="visually-hidden">
-                      Email address
+                      {t('Email address')}
                     </label>
                     <input
                       id="newsletter1"
@@ -92,7 +77,7 @@ const Footer = () => {
                       className="btn btn-primary rounded-pill px-4"
                       type="button"
                     >
-                      Subscribe
+                      {t('Subscribe')}
                     </button>
                   </div>
                 </form>
@@ -100,7 +85,7 @@ const Footer = () => {
             </div>
 
             <div className="d-flex justify-content-between pt-4 mt-4 border-top">
-              <p>© 2021 Company, Inc. All rights reserved.</p>
+              <p>{t('© 2021 Company, Inc. All rights reserved.')}</p>
               <ul className="list-unstyled d-flex">
                 <li className="ms-3">
                   <NavLink className="link-light" to="#">
@@ -112,12 +97,18 @@ const Footer = () => {
                     <i className="fa fa-instagram fa-2x"></i>
                   </NavLink>
                 </li>
+                <div className="mb-3">
+                  
+
+                </div>
                 <li className="ms-3">
                   <NavLink className="link-light" to="#">
                     <i className="fa fa-twitter fa-2x"></i>
                   </NavLink>
                 </li>
+                
               </ul>
+              
             </div>
           </footer>
         </div>
@@ -125,5 +116,11 @@ const Footer = () => {
     </div>
   );
 };
-
-export default Footer;
+const FooterPageWithSuspense = () => {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <Footer  />
+    </Suspense>
+  );
+}
+export default FooterPageWithSuspense;

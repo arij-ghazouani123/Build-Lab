@@ -1,4 +1,5 @@
 import React from "react";
+import { FaCodeBranch, FaCloud, FaDocker, FaServer, FaTasks } from "react-icons/fa";
 
 const Services = () => {
   return (
@@ -18,11 +19,10 @@ const Services = () => {
             <div className="col-md-4">
               <div className="card p-3 ">
                 <div className="card-body text-center">
-                    <i className="fa fa-cogs fa-4x mb-4 text-primary"></i>
-                  <h5 className="card-title mb-3 fs-4 fw-bold">Highly Customizable</h5>
+                  <FaCodeBranch className="mb-4 text-primary" size={64} />
+                  <h5 className="card-title mb-3 fs-4 fw-bold">Continuous Integration</h5>
                   <p className="card-text lead">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    We help you implement a continuous integration process that automatically builds, tests, and deploys your code changes.
                   </p>
                 </div>
               </div>
@@ -30,11 +30,10 @@ const Services = () => {
             <div className="col-md-4">
               <div className="card p-3 ">
                 <div className="card-body text-center">
-                    <i className="fa fa-mobile fa-4x mb-4 text-primary"></i>
-                  <h5 className="card-title mb-3 fs-4 fw-bold">Fully Responsive Layout</h5>
+                  <FaTasks className="mb-4 text-primary" size={64} />
+                  <h5 className="card-title mb-3 fs-4 fw-bold">Continuous Delivery</h5>
                   <p className="card-text lead">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    We help you automate your software delivery process so you can release new features to your users quickly and reliably.
                   </p>
                 </div>
               </div>
@@ -42,11 +41,10 @@ const Services = () => {
             <div className="col-md-4">
               <div className="card p-3 ">
                 <div className="card-body text-center">
-                    <i className="fa fa-users fa-4x mb-4 text-primary"></i>
-                  <h5 className="card-title mb-3 fs-4 fw-bold">Users Experience</h5>
+                  <i className="fa fa-rocket fa-4x mb-4 text-primary"></i>
+                  <h5 className="card-title mb-3 fs-4 fw-bold">Continuous Deployment</h5>
                   <p className="card-text lead">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    With Continuous Deployment, changes are automatically deployed to production after passing testing
                   </p>
                 </div>
               </div>
@@ -56,11 +54,10 @@ const Services = () => {
             <div className="col-md-4">
               <div className="card p-3 ">
                 <div className="card-body text-center">
-                    <i className="fa fa-laptop fa-4x mb-4 text-primary"></i>
-                  <h5 className="card-title mb-3 fs-4 fw-bold">Creative Web Design</h5>
+                  <FaServer className="mb-4 text-primary" size={64} />
+                  <h5 className="card-title mb-3 fs-4 fw-bold">Server Configuration</h5>
                   <p className="card-text lead">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    We help you configure and manage your servers using infrastructure-as-code and automation tools.
                   </p>
                 </div>
               </div>
@@ -68,11 +65,10 @@ const Services = () => {
             <div className="col-md-4">
               <div className="card p-3 ">
                 <div className="card-body text-center">
-                    <i className="fa fa-file-code-o fa-4x mb-4 text-primary"></i>
-                  <h5 className="card-title mb-3 fs-4 fw-bold">Unique and Clean</h5>
+                  <i className="fa fa-chart-line fa-4x mb-4 text-primary"></i>
+                  <h5 className="card-title mb-3 fs-4 fw-bold">Monitoring and Analytics</h5>
                   <p className="card-text lead">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Monitor application performance and user behavior to identify areas for improvement and optimize resource usage.
                   </p>
                 </div>
               </div>
@@ -80,14 +76,14 @@ const Services = () => {
             <div className="col-md-4">
               <div className="card p-3 ">
                 <div className="card-body text-center">
-                    <i className="fa fa-star-half-o fa-4x mb-4 text-primary"></i>
-                  <h5 className="card-title mb-3 fs-4 fw-bold">Creative Ideas</h5>
+                  <i className="fa fa-check fa-4x mb-4 text-primary"></i>
+                  <h5 className="card-title mb-3 fs-4 fw-bold">Automated Testing</h5>
                   <p className="card-text lead">
-                    Some quick example text to build on the card title and make
-                    up the bulk of the card's content.
+                    Our pipeline also includes Automated Testing, ensuring that code is thoroughly tested before deployment.
                   </p>
                 </div>
               </div>
+
             </div>
           </div>
         </div>

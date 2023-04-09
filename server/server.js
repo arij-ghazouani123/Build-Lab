@@ -12,18 +12,18 @@ import cors from 'cors';
 const app = express();
 
 const port = process.env.port || 9090;
-const databaseName ='Buildlab';
+const databaseName ='buildLab';
 
 app.use(
     cors({
-        origin : "http://localhost:3000"
+        origin : '*'
     })
 );
 mongoose.set('debug', true);
 
 mongoose.Promise = global.Promise;
 
-mongoose.connect(`mongodb://localhost:27017/${databaseName}`).then(() => {
+mongoose.connect(`mongodb://127.0.0.1:27017/${databaseName}`).then(() => {
     console.log(`connected to ${databaseName}`);
 } ).catch(er => console.log(er));
 

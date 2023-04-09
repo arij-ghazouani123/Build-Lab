@@ -1,7 +1,11 @@
 import project from '../modals/projet.js';
 import contributor from "../modals/contributor.js";
+/////////////////////////////////////////
+import mixpanel from 'mixpanel';
+// create an instance of the mixpanel client
+var Mixpanel = mixpanel.init('24382e06ab44f0ebb6a5e1913b4d5862');
 
-
+///////////////////////////////////////
 export async function addProject(req, res) {
 
      try {
@@ -64,27 +68,6 @@ export function getUserRole(req, res) {
 }
 
 
-
-//Get Project Details ById 
-export async function afficherDetailsProjet(req,res) {
-     
-     try {
-          const projectId = req.params._id;
-         const Project = await project.findById(projectId)
-             .populate('user') 
-             .populate('contributors') 
-             .populate('name') 
-             .populate('releaseType') 
-             .populate('opSystem') 
-             .populate('platform') 
-           
-         console.log(Project);
-     } catch (err) {
-         console.error(err);
-     }
- }
-
-
 // Delete project
 
 export function deleteProject(req, res) {
@@ -97,6 +80,29 @@ export function deleteProject(req, res) {
           });
 }
 
+
+//Get Project Details ById 
+
+//Get Project Details ById 
+export async function afficherDetailsProjet(req, res) {
+
+     try {
+          const projectId = req.params._id;
+          const Project = await project.findById(projectId)
+               .populate('user', 'userName')
+               .populate('contributors')
+               .populate('name')
+               .populate('releaseType')
+               .populate('opSystem')
+               .populate('platform')
+
+          res.json(Project);
+     } catch (error) {
+          Mixpanel.track('App Crashed', { error: error });
+          console.error(error);
+          res.status(500).send({ message: 'Internal server error' });
+     }
+}
 //Update Project
 
 export function updateProject(req, res) {
@@ -120,8 +126,6 @@ export function updateProject(req, res) {
           }
      );
 };
-
-
 
 
 

@@ -1,14 +1,18 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { NavLink } from 'react-router-dom';
-import UpdateProjectModal from './UpdateProjectModal ';
 import NewProjectModal from './NewProjectModal';
+import Afficheprojectmodel from './afficheprojectModel';
+import ProjectDetails from './afficheprojectDetails';
+import UpdateProjectModal from './UpdateProjectModal ';
+
 
 export default function ProjectsList() {
     // Fetch User projects
     const userId = localStorage.getItem("idfromtoken");
     const [data, setData] = useState([]);
     const [ids, setIds] = useState([]);
+    const [showDetails, setShowDetails] = useState(false);
 
     const handleDeleteChange = async (event3) => {
         event3.preventDefault();
@@ -17,12 +21,15 @@ export default function ProjectsList() {
             headers: { 'Content-Type': 'application/json' },
         });
     };
+
     const handleAddId = (id) => {
         setIds((prevIds) => [...prevIds, id]);
-    }; useEffect(() => {
+
+    };
+    useEffect(() => {
         axios.get(`http://localhost:9090/project/myProjects/${userId}`)
             .then(res => {
-                console.log(res);
+                console.log(res.data);
                 setData(res.data)
             })
             .catch(err => {
@@ -32,21 +39,7 @@ export default function ProjectsList() {
 
 
 
-    //fetch User Role 
 
-
-    /*const [role, setRole] = useState([]);
-    
-        useEffect(() => {
-            axios.get(`http://127.0.0.1:9090/project/myRole/63ffb6dcb63179ea4458f112/63ff20b3f5330d6b2cb16d55`)
-            .then(res => {
-                console.log(res);
-                setRole(res.role)
-            })
-            .catch( err => {
-                console.log(err)
-            })
-        })*/
     function handleRowClick(id) {
         console.log(`Clicked on project ${id}`);
         localStorage.setItem('projectIdFromProjectLists', id);
@@ -54,19 +47,19 @@ export default function ProjectsList() {
         return id
     }
 
-
+    function handleDetailsClose() {
+        setShowDetails(false);
+    }
     return (
         <div>
             <NewProjectModal />
 
-            <table className="table table-hover" style={{ border: "2px solid blue"}}>
+            <table className="table table-hover" style={{ border: "3px solid black", margin: 30 }}>
                 <thead>
                     <tr className='table-info'>
-                        <th scope="col"></th>
                         <th scope="col">App Name</th>
                         <th scope="col">OS</th>
                         <th scope="col">Platform</th>
-                        <th scope="col">Role</th>
                         <th scope="col">Options</th>
 
                     </tr>
@@ -74,34 +67,30 @@ export default function ProjectsList() {
                 <tbody>
                     {data.map((item) => (
                         <tr key={item.id} >
-                            <td>{item.id}</td>
                             <td>{item.name}</td>
                             <td>{item.opSystem}</td>
                             <td>{item.platform}</td>
-                            <td>Mantainer</td>
                             <td>
-                                <div style={{
-                                    display: 'flex',
-                                    justifycontent: 'row'
-                                }}>
-                                    <button onClick={() => handleRowClick(item._id)} style
-                                        ={{ border: 'none', outline: 'none' }} class="btn btn-light w-30 rounded-pill"> <UpdateProjectModal />   </button>
-                                    <button type="button" class="btn btn-danger  w-30 rounded-pill" onClick={(event) => {
-                                        handleRowClick(item._id); handleDeleteChange(event);
-                                    }}>Delete</button>
-                                    <button type="button" class="btn btn-primary rounded-pill" onClick={() => handleRowClick(item._id)} ><NavLink className="nav-link" to="/invitation">Invite</NavLink></button>
-
-                                </div>
+                                <button onClick={() => handleRowClick(item._id)} style
+                                    ={{ border: 'none', outline: 'none' }} class="btn btn-light w-30 rounded-pill"> <UpdateProjectModal/>   </button>
+                                <button type="button" class="btn btn-danger  w-30 rounded-pill" onClick={(event) => {
+                                    handleRowClick(item._id); handleDeleteChange(event);
+                                }}>Delete</button>
+                                <button type="button" class="btn btn-primary  w-30 rounded-pill" onClick={() => handleRowClick(item._id)} ><NavLink to="/invitation">Invite</NavLink></button>
+                                {showDetails && <ProjectDetails itemId={handleRowClick(item._id)} onClose={handleDetailsClose} />}
+                                <Afficheprojectmodel itemId={handleRowClick(item._id)} />
                             </td>
                         </tr>
                     ))}
 
+
                 </tbody>
 
             </table>
+        </div>
 
-        </div >
     );
+
 
 
 }

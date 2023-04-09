@@ -1,44 +1,48 @@
 import mongoose from "mongoose";
- 
-const {Schema , model} = mongoose;
+
+const { Schema, model } = mongoose;
 const projectSchema = new Schema(
     {
-        user: { type: Schema.Types.ObjectId, 
-            ref: 'user' },
-
-    contributors: [{ type: Schema.Types.ObjectId, 
-        ref: 'contributor' }],
-
-    name: {
-            type: String,
-            required : true
+        user: {
+            type: Schema.Types.ObjectId,
+            ref: 'user'
         },
 
-    image: {
-        type: String,
-        required: false
+        contributors: [{
+            type: Schema.Types.ObjectId,
+            ref: 'contributor'
+        }],
 
-    },
+        name: {
+            type: String,
+            required: true
+        },
 
-    releaseType: {
-        type: String,
-        enum: ['Alpha', 'Beta','Entreprise','Production','Share'],
-        default: 'Alpha'
+        image: {
+            type: String,
+            required: false
 
-    },
-    opSystem: {
-        type:String,
-        
-        enum: ['IOS', 'Android','Windows','MacOs','TvOs'],
-        default: 'Android'
-    },
+        },
 
-    platform: {
-        type: String, 
-        enum: ['Swift', 'React Native','Xamarin','Flutter'],
-        default: 'Flutter'
-    }
+        releaseType: {
+            type: String,
+            enum: ['Alpha', 'Beta', 'Entreprise', 'Production', 'Share'],
+            default: 'Alpha'
+
+        },
+        opSystem: {
+            type: String,
+
+            enum: ['IOS', 'Android', 'Windows', 'MacOs', 'TvOs'],
+            default: 'Android'
+        },
+
+        platform: {
+            type: String,
+            enum: ['Swift', 'React Native', 'Xamarin', 'Flutter'],
+            default: 'Flutter'
+        }
 
 
-});
-export default model ("project",projectSchema);
+    });
+export default model("project", projectSchema);

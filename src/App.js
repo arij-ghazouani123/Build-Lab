@@ -13,9 +13,21 @@ import Logout from './components/Logout';
 import Protectedroute from './ProtectedRoute';
 import InviteForm from './components/invitation';
 import { useEffect, useState } from 'react';
+import PaymentForm from './components/PaymentForm';
+import Build from './components/Build';
+import ResetPassword from './components/ResetPassword';
+import VerificationCode from './components/VerificationCode';
+import VerificationMail from './components/VerificationMail';
+import TermsAndConditions from './components/TermsAndConditions';
+import SettingsPage from './components/SettingsPage';
+import Profile from './components/Profile';
+import EmailForm from './components/ForgotPassword';
+import ReactSwitch from 'react-switch';
 import ProjectsList from './components/ProjectsList';
+import ConnectToStore from './components/ConnectToStore';
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
   // Check If User is Logged In
   const [auth, setauth] = useState(false);
@@ -51,7 +63,9 @@ function App() {
   }, []);
 
   return (
-    <>
+   
+    <div >
+      <ReactSwitch checked={isDarkMode} onChange/>
       <Navbar auth={auth1}/>
       <Switch>
         <Route exact path="/" component={Home} />
@@ -60,28 +74,32 @@ function App() {
         <Route exact path="/contact" component={Contact} />
         <Route exact path="/invitation" component={InviteForm} />
         <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/ProjectLits" component={ProjectsList} />
+        <Route exact path="/ProjectList" component={ProjectsList} />
+        <Protectedroute exact path="/payment" component={PaymentForm} auth={auth1}/>
 
-
+        <Protectedroute exact path="/VerificationCode" component={VerificationCode} auth={auth1}/>
+        <Protectedroute exact path="/SettingsPage" component={SettingsPage} auth={auth1}/>
+        <Protectedroute exact path="/Profile" component={Profile} auth={auth1}/>
+        <Protectedroute exact path="/ConnectToStore" component={ConnectToStore} auth={auth} />
+        <Protectedroute exact path="/VerificationMail" component={VerificationMail} auth={auth1}/>
+        <Protectedroute exact path="/TermsAndConditions" component={TermsAndConditions} auth={auth1}/>
+        <Protectedroute exact path="/ResetPassword" component={ResetPassword} auth={auth1}/>
         <Protectedroute exact path="/login" component={Login} auth={auth1}/>
         <Protectedroute exact path="/register" component={Register} auth={auth1}/>
         <Protectedroute exact path="/dashboard" component={Dashboard} auth={auth}/>
         <Protectedroute exact path="/logout" component={Logout} auth={auth}/>
+        <Route exact path="/ForgotPassword" component={EmailForm} />
+
 
       </Switch>
       <Footer/>
-    </>
+      </div>
+
+    
   );
 }
 
 export default App;
 
 
-// Now we have to Procted Out Route Like Without Login
-// You can not go to Dashboard
-// And After login you can not login again
-// We need Protected Routes
 
-// We Cant Acces Them If Auth is False
-
-// Now we need to Change Navbar Dynamically
